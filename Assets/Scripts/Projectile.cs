@@ -12,4 +12,12 @@ public class Projectile : MonoBehaviour
     {
         rb.MovePosition(rb.position + Vector2.up * moveSpeed * Time.deltaTime);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Destroyer")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
