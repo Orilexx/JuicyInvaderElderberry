@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float shootCooldown;
     private float actualCooldown;
 
+    [SerializeField] AudioSource audioData;
+
     Vector2 movement;
 
 
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
         {
             if (actualCooldown >= shootCooldown)
             {
+                audioData.Play();
                 Instantiate(prefab, weapon.position, prefab.transform.rotation);
                 actualCooldown = 0;
             }
