@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
         rb.MovePosition(rb.position + Vector2.up * moveSpeed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Destroyer")
         {
@@ -21,6 +21,20 @@ public class Projectile : MonoBehaviour
         }
         else if(collision.gameObject.tag == "Enemy")
         {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+    }*/
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Destroyer")
+        {
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponentInParent<ArmyManager>().GetEnemies().Remove(collision.gameObject.transform);
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

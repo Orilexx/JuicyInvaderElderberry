@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Destroyer
   - Enemy
+  - Wall
+  - DeathCheck
+  - GameManager
   layers:
   - Default
   - TransparentFX
