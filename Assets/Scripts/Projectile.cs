@@ -34,7 +34,7 @@ public class Projectile : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponentInParent<ArmyManager>().GetEnemies().Remove(collision.gameObject.transform);
+            collision.gameObject.GetComponentInParent<ArmyManager>().GetEnemies().Remove(collision.gameObject.GetComponent<EnemyController>());
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

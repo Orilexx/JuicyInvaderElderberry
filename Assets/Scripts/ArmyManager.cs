@@ -7,17 +7,31 @@ public class ArmyManager : MonoBehaviour
     [SerializeField] bool movesRight;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float moveSpeed;
-    [SerializeField] List<Transform> enemies;
+    [SerializeField] List<EnemyController> enemies;
     [SerializeField] float padding;
 
-    private GameObject gameManager;
+    private GameManager gameManager;
 
+    [SerializeField] Rigidbody2D prefab;
 
+    [SerializeField] float timer = 3f;
+    private float timeLeft;
 
+    public float dist = 0f;
+
+    [SerializeField] List<EnemyController> frontEnemies;
+
+    private void Awake()
+    {
+        //SetRowEnemy();
+    }
     private void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        timeLeft = timer;
+
     }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -39,8 +53,26 @@ public class ArmyManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        timeLeft -= Time.deltaTime;
 
-    public List<Transform> GetEnemies()
+        if(timeLeft <= 0)
+        {
+            timeLeft = timer;
+
+            int i = Random.Range(0, frontEnemies.Count);
+            Instantiate(prefab, frontEnemies[i].spawnWeapon.position, prefab.transform.rotation);
+
+        }
+
+
+        SetRowEnemy();
+
+    }
+
+
+    public List<EnemyController> GetEnemies()
     {
         return enemies;
     }
@@ -63,6 +95,47 @@ public class ArmyManager : MonoBehaviour
         else if (collision.gameObject.tag == "DeathCheck")
         {
             gameManager.GetComponent<GameManager>().setLost(true);
+        }
+    }
+
+    private void SetRowEnemies()
+    {
+        float distMin = Mathf.Infinity;
+
+        // Calcul de la distance minimum
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            float playerPosition = gameManager.player.transform.position.y;
+            dist = enemies[i].transform.position.y - playerPosition;
+
+            if (dist < distMin)
+            {
+                distMin = dist;
+            }
+
+        }
+
+        // Add To Front Row
+        for (int y = 0; y < enemies.Count; y++)
+        {
+            float distEnemy = enemies[y].transform.position.y - gameManager.player.transform.position.y;
+
+            if (distEnemy == dist)
+            {
+                frontEnemies.Add(enemies[y]);
+            }
+        }
+    }
+
+    private void SetRowEnemy()
+    {
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            if (enemies[i].isInFront)
+            {
+                if(!frontEnemies.Contains(enemies[i]))
+                    frontEnemies.Add(enemies[i]);
+            }
         }
     }
 }

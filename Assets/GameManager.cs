@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Rigidbody2D army;
     [SerializeField] Transform spawner;
     [SerializeField] GameObject deathScreen;
+    public PlayerController player;
 
     private bool isLost = false;
 
