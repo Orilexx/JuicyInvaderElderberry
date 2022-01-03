@@ -17,24 +17,22 @@ public class ArmyManager : MonoBehaviour
     [SerializeField] float timer = 3f;
     private float timeLeft;
 
-    public float dist = 0f;
 
     [SerializeField] List<EnemyController> frontEnemies;
 
-    private void Awake()
-    {
-        //SetRowEnemy();
-    }
+ 
     private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         timeLeft = timer;
-
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        
+
         if (enemies.Count == 0)
         {
             Destroy(gameObject);
@@ -55,6 +53,9 @@ public class ArmyManager : MonoBehaviour
 
     void Update()
     {
+
+        
+
         timeLeft -= Time.deltaTime;
 
         if(timeLeft <= 0)
@@ -98,42 +99,15 @@ public class ArmyManager : MonoBehaviour
         }
     }
 
-    private void SetRowEnemies()
-    {
-        float distMin = Mathf.Infinity;
 
-        // Calcul de la distance minimum
-        for (int i = 0; i < enemies.Count; i++)
-        {
-            float playerPosition = gameManager.player.transform.position.y;
-            dist = enemies[i].transform.position.y - playerPosition;
-
-            if (dist < distMin)
-            {
-                distMin = dist;
-            }
-
-        }
-
-        // Add To Front Row
-        for (int y = 0; y < enemies.Count; y++)
-        {
-            float distEnemy = enemies[y].transform.position.y - gameManager.player.transform.position.y;
-
-            if (distEnemy == dist)
-            {
-                frontEnemies.Add(enemies[y]);
-            }
-        }
-    }
 
     private void SetRowEnemy()
     {
+        frontEnemies.Clear();
         for (int i = 0; i < enemies.Count; i++)
         {
             if (enemies[i].isInFront)
             {
-                if(!frontEnemies.Contains(enemies[i]))
                     frontEnemies.Add(enemies[i]);
             }
         }

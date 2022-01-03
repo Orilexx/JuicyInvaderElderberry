@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - DeathCheck
   - GameManager
+  - EnemyProj
   layers:
   - Default
   - TransparentFX

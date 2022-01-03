@@ -13,7 +13,8 @@ public class EnemyController : MonoBehaviour
     {
         isInFront = false;
         spawnWeapon = this.transform.Find("SpawnPoint");
-        Debug.Log(isInFront);
+        SetInFront();
+        
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class EnemyController : MonoBehaviour
         SetInFront();
     }
 
-    private void SetInFront()
+    public void SetInFront()
     {
         RaycastHit2D hit = Physics2D.Raycast(spawnWeapon.transform.position, -Vector2.up * 2);
 
