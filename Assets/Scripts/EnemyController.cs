@@ -7,33 +7,26 @@ public class EnemyController : MonoBehaviour
 
     public Transform spawnWeapon;
     public bool isInFront;
-
    
     void Start()
     {
         isInFront = false;
         spawnWeapon = this.transform.Find("SpawnPoint");
-        SetInFront();
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        SetInFront();
+        Physics2D.queriesHitTriggers = false;
     }
-
-    public void SetInFront()
+    
+    public bool IsInFront()
     {
         RaycastHit2D hit = Physics2D.Raycast(spawnWeapon.transform.position, -Vector2.up * 2);
 
         if (hit.collider.gameObject.CompareTag("Enemy"))
         {
-            isInFront = false;
+            return false;
         }
         else
         {
-            isInFront = true;
+            return true;
         }
     }
     

@@ -12,19 +12,10 @@ public class ArmyManager : MonoBehaviour
 
     private GameManager gameManager;
 
-    [SerializeField] Rigidbody2D prefab;
-
-    [SerializeField] float timer = 3f;
-    private float timeLeft;
-
-
-    [SerializeField] List<EnemyController> frontEnemies;
-
  
     private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        timeLeft = timer;
         
     }
 
@@ -54,21 +45,6 @@ public class ArmyManager : MonoBehaviour
     void Update()
     {
 
-        
-
-        timeLeft -= Time.deltaTime;
-
-        if(timeLeft <= 0)
-        {
-            timeLeft = timer;
-
-            int i = Random.Range(0, frontEnemies.Count);
-            Instantiate(prefab, frontEnemies[i].spawnWeapon.position, prefab.transform.rotation);
-
-        }
-
-
-        SetRowEnemy();
 
     }
 
@@ -96,20 +72,6 @@ public class ArmyManager : MonoBehaviour
         else if (collision.gameObject.tag == "DeathCheck")
         {
             gameManager.GetComponent<GameManager>().setLost(true);
-        }
-    }
-
-
-
-    private void SetRowEnemy()
-    {
-        frontEnemies.Clear();
-        for (int i = 0; i < enemies.Count; i++)
-        {
-            if (enemies[i].isInFront)
-            {
-                    frontEnemies.Add(enemies[i]);
-            }
         }
     }
 }
