@@ -1065,7 +1065,7 @@ MonoBehaviour:
   deathScreen: {fileID: 1621047427}
   player: {fileID: 545891326}
   waves:
-  - {fileID: 7343709881934502872, guid: 9bd60d8bc5464674392dd772c21d66ef, type: 3}
+  - {fileID: 8559418526515723308, guid: 8756be7aa91fdca43a82d911cc2626bc, type: 3}
   armiesManager: {fileID: 0}
 --- !u!1 &2018525047
 GameObject:
