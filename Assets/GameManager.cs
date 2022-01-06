@@ -12,23 +12,37 @@ public class GameManager : MonoBehaviour
 
     private bool isLost = false;
 
-    [SerializeField] List<Wave> waves;
+    public List<Wave> waves;
     [SerializeField] Wave armiesManager;
+
+    int i = 0;
+
+    void Start()
+    {
+        i = 0;
+        gameObject.SetActive(true);
+        armiesManager = null;
+        Time.timeScale = 1;
+    }
 
     // Update is called once per frame
     void Update()
     {
         if(isLost)
         {
-            armyManager = null;
+            //armyManager = null;
             deathScreen.SetActive(true);
-            gameObject.SetActive(false);
+            Time.timeScale = 0;
         }
 
-        if (armiesManager == null)
+        
+        if (armiesManager == null && !isLost)
         {
-            int j = Random.Range(0, waves.Count);
-            armiesManager = Instantiate(waves[j], spawner.position, waves[j].transform.rotation);
+            //int j = Random.Range(0, waves.Count);
+            //armiesManager = Instantiate(waves[j], spawner.position, waves[j].transform.rotation);
+            
+            armiesManager = Instantiate(waves[i], spawner.position, waves[i].transform.rotation);
+            i++;
         }
         
 

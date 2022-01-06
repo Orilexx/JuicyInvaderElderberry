@@ -1059,7 +1059,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4729142472882212717}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1105,9 +1105,7 @@ MonoBehaviour:
   - {fileID: 4729142473069906131}
   - {fileID: 4729142472993152842}
   padding: 0.1
-  prefab: {fileID: 1866359108432930292, guid: b1a31ba29a3184044bc1bcac5bca871f, type: 3}
-  timer: 3
-  frontEnemies: []
+  gameManager: {fileID: 0}
 --- !u!50 &4729142472882212705
 Rigidbody2D:
   serializedVersion: 4

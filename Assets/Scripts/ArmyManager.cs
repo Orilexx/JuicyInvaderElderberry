@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ArmyManager : MonoBehaviour
 {
-    [SerializeField] bool movesRight;
-    [SerializeField] Rigidbody2D rb;
+    public bool movesRight;
+    public Rigidbody2D rb;
     [SerializeField] float moveSpeed;
     [SerializeField] List<EnemyController> enemies;
-    [SerializeField] float padding;
+    public float padding;
 
-    private GameManager gameManager;
+    public GameManager gameManager;
 
  
     private void Start()
@@ -24,11 +24,11 @@ public class ArmyManager : MonoBehaviour
     {
         
 
-        if (enemies.Count == 0)
-        {
-            Destroy(gameObject);
-        }
-        else
+        //if (enemies.Count == 0)
+        //{
+        //    Destroy(gameObject);
+        //}
+        if (enemies.Count != 0)
         {
             if (movesRight)
             {
@@ -54,24 +54,24 @@ public class ArmyManager : MonoBehaviour
         return enemies;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Wall")
-        {
-            if (movesRight)
-            {
-                movesRight = false;
-            }
-            else
-            {
-                movesRight = true;
-            }
-            rb.position = new Vector2(rb.position.x, rb.position.y - padding);
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Wall")
+    //    {
+    //        if (movesRight)
+    //        {
+    //            movesRight = false;
+    //        }
+    //        else
+    //        {
+    //            movesRight = true;
+    //        }
+    //        rb.position = new Vector2(rb.position.x, rb.position.y - padding);
 
-        }
-        else if (collision.gameObject.tag == "DeathCheck")
-        {
-            gameManager.GetComponent<GameManager>().setLost(true);
-        }
-    }
+    //    }
+    //    else if (collision.gameObject.tag == "DeathCheck")
+    //    {
+    //        gameManager.GetComponent<GameManager>().setLost(true);
+    //    }
+    //}
 }

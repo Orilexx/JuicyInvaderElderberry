@@ -7,6 +7,14 @@ public class Projectile : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float moveSpeed;
 
+    private GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -28,6 +36,8 @@ public class Projectile : MonoBehaviour
                 collision.gameObject.GetComponentInParent<ArmyManager>().GetEnemies().Remove(collision.gameObject.GetComponent<EnemyController>());
                 Destroy(collision.gameObject);
                 Destroy(gameObject);
+                gameManager.player.score++;
+                gameManager.player.scoreText.text = "Score : " + gameManager.player.score;
             }
         }
         else if (collision.gameObject.tag == "Player")

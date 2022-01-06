@@ -9201,7 +9201,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8251726158676623906}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -9299,6 +9299,7 @@ MonoBehaviour:
   - {fileID: 2716837530531613699}
   - {fileID: 2716837530611595248}
   padding: 0.1
+  gameManager: {fileID: 0}
 --- !u!50 &8251726158676623918
 Rigidbody2D:
   serializedVersion: 4

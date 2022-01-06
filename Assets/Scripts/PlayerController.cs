@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,10 +17,15 @@ public class PlayerController : MonoBehaviour
 
     Vector2 movement;
 
+    public int score;
+    public Text scoreText;
+
 
     private void Start()
     {
         actualCooldown = shootCooldown;
+        score = 0;
+        scoreText.text = "Score : " + score;
     }
 
     // Update is called once per frame

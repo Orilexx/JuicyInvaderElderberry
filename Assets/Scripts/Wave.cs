@@ -14,10 +14,12 @@ public class Wave : MonoBehaviour
 
     [SerializeField] List<EnemyController> frontEnemies;
 
-    List<EnemyController> enemies;
+    GameManager gameManager;
 
-    private void Start()
+    void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
         timeLeft = timer;
     }
 
@@ -37,6 +39,24 @@ public class Wave : MonoBehaviour
 
         }
 
+    }
+
+    void FixedUpdate()
+    {
+        if(armies.Count == 1)
+        {
+            if (armies[0].GetEnemies().Count == 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+        else if(armies.Count == 2)
+        {
+            if (armies[0].GetEnemies().Count == 0 && armies[1].GetEnemies().Count == 0)
+            {
+                Destroy(gameObject);
+            }
+        }
         
 
     }
