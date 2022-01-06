@@ -7,6 +7,9 @@ public class Projectile : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float moveSpeed;
 
+    [SerializeField] GameObject particles;
+    [SerializeField] GameObject deathParticles;
+
     private GameManager gameManager;
 
     private void Start()
@@ -33,6 +36,8 @@ public class Projectile : MonoBehaviour
         {
             if (gameObject.tag != "EnemyProj")
             {
+                Instantiate(particles, transform.position, transform.rotation);
+                Instantiate(deathParticles, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
                 collision.gameObject.GetComponentInParent<ArmyManager>().GetEnemies().Remove(collision.gameObject.GetComponent<EnemyController>());
                 Destroy(collision.gameObject);
                 Destroy(gameObject);
