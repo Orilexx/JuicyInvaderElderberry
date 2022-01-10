@@ -2,18 +2,80 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TYPE_ENEMY
+{
+    MAI,
+    ECHO,
+    SANTEN,
+    NARUTO,
+    MOUCHE,
+    BOOMER,
+    CRABY
+}
+
 public class EnemyController : MonoBehaviour
 {
-
+    
     public Transform spawnWeapon;
     public bool isInFront;
-   
+    [HideInInspector] public int score;
+    [HideInInspector] public int damage;
+
+    public TYPE_ENEMY type;
+
+    GameManager gameManager;
+
     void Start()
     {
         isInFront = false;
         spawnWeapon = this.transform.Find("SpawnPoint");
 
         Physics2D.queriesHitTriggers = false;
+
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
+        if (type == TYPE_ENEMY.MAI)
+        {
+            score = 150;
+            damage = 10;
+            gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.enemiesSprite[0];
+        }
+        else if (type == TYPE_ENEMY.ECHO)
+        {
+            score = 100;
+            damage = 10;
+            gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.enemiesSprite[1];
+        }
+        else if (type == TYPE_ENEMY.SANTEN)
+        {
+            score = 200;
+            damage = 10;
+            gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.enemiesSprite[2];
+        }
+        else if (type == TYPE_ENEMY.NARUTO)
+        {
+            score = 200;
+            damage = 20;
+            gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.enemiesSprite[3];
+        }
+        else if (type == TYPE_ENEMY.MOUCHE)
+        {
+            score = 50;
+            damage = 5;
+            gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.enemiesSprite[4];
+        }
+        else if (type == TYPE_ENEMY.BOOMER)
+        {
+            score = 100;
+            damage = 30;
+            gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.enemiesSprite[4];
+        }
+        else if (type == TYPE_ENEMY.CRABY)
+        {
+            score = 1000;
+            damage = 0;
+            gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.enemiesSprite[5];
+        }
     }
     
     public bool IsInFront()

@@ -15,11 +15,14 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] ParticleSystem particlesShoot;
 
-
     Vector2 movement;
 
     public int score;
     public Text scoreText;
+
+    public int life = 50;
+    [HideInInspector] public int actualLife;
+    public Image lifeImage;
 
 
     private void Start()
@@ -27,11 +30,16 @@ public class PlayerController : MonoBehaviour
         actualCooldown = shootCooldown;
         score = 0;
         scoreText.text = "Score : " + score;
+
+        actualLife = life;
+
+        lifeImage.fillAmount = actualLife / life;
     }
 
     // Update is called once per frame
     void Update()
     {
+
         movement.x = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetKeyDown("space"))
@@ -50,5 +58,10 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    public void Lose()
+    {
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().setLost(true);
     }
 }

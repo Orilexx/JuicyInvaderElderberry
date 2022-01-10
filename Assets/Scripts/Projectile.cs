@@ -12,6 +12,8 @@ public class Projectile : MonoBehaviour
 
     private GameManager gameManager;
 
+    /*[HideInInspector]*/ public EnemyController instantiater;
+
     private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -38,16 +40,26 @@ public class Projectile : MonoBehaviour
             {
                 Instantiate(particles, transform.position, transform.rotation);
                 Instantiate(deathParticles, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+
                 collision.gameObject.GetComponentInParent<ArmyManager>().GetEnemies().Remove(collision.gameObject.GetComponent<EnemyController>());
+
+                gameManager.player.score += collision.gameObject.GetComponent<EnemyController>().score;
+                gameManager.player.scoreText.text = "Score : " + gameManager.player.score;
+
                 Destroy(collision.gameObject);
                 Destroy(gameObject);
-                gameManager.player.score++;
-                gameManager.player.scoreText.text = "Score : " + gameManager.player.score;
+
             }
         }
         else if (collision.gameObject.tag == "Player")
         {
-            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().setLost(true);
+            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+            player.actualLife -= instantiater.damage;
+
+            player.lifeImage.fillAmount = (float) player.actualLife / player.life;
+
+            if (player.actualLife <= 0)
+                player.Lose();
         }
     }
 }

@@ -35,7 +35,12 @@ public class Wave : MonoBehaviour
             SetRowEnemy();
 
             int i = Random.Range(0, frontEnemies.Count);
-            Instantiate(prefab, frontEnemies[i].spawnWeapon.position, prefab.transform.rotation);
+
+            if (frontEnemies[i].damage != 0)
+            {
+                Rigidbody2D projectile = Instantiate(prefab, frontEnemies[i].spawnWeapon.position, prefab.transform.rotation);
+                projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
+            }
 
         }
 

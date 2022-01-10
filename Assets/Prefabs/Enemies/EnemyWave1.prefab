@@ -358,6 +358,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnWeapon: {fileID: 0}
   isInFront: 0
+  score: 0
+  damage: 0
+  type: 4
 --- !u!61 &5562650572579898203
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -483,6 +486,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnWeapon: {fileID: 0}
   isInFront: 0
+  score: 0
+  damage: 0
+  type: 0
 --- !u!61 &9012596105895240795
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -608,6 +614,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnWeapon: {fileID: 0}
   isInFront: 0
+  score: 0
+  damage: 0
+  type: 2
 --- !u!61 &5304817862541234281
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -733,6 +742,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnWeapon: {fileID: 0}
   isInFront: 0
+  score: 0
+  damage: 0
+  type: 4
 --- !u!61 &467119106985604165
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -858,6 +870,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnWeapon: {fileID: 0}
   isInFront: 0
+  score: 0
+  damage: 0
+  type: 3
 --- !u!61 &8782065110961231122
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -983,6 +998,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnWeapon: {fileID: 0}
   isInFront: 0
+  score: 0
+  damage: 0
+  type: 5
 --- !u!61 &6197746351055159235
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1226,6 +1244,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnWeapon: {fileID: 0}
   isInFront: 0
+  score: 0
+  damage: 0
+  type: 1
 --- !u!61 &1376297141397538824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1351,6 +1372,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnWeapon: {fileID: 0}
   isInFront: 0
+  score: 0
+  damage: 0
+  type: 5
 --- !u!61 &2974136828316939722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1476,6 +1500,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnWeapon: {fileID: 0}
   isInFront: 0
+  score: 0
+  damage: 0
+  type: 0
 --- !u!61 &6010512731091824337
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1601,6 +1628,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnWeapon: {fileID: 0}
   isInFront: 0
+  score: 0
+  damage: 0
+  type: 3
 --- !u!61 &4179655383828443823
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public List<Wave> waves;
     [SerializeField] Wave armiesManager;
 
+    public List<Sprite> enemiesSprite;
+
     int i = 0;
 
     void Start()
