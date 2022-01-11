@@ -25,6 +25,8 @@ public class EnemyController : MonoBehaviour
 
     GameManager gameManager;
 
+    [HideInInspector] public AudioClip deathClip;
+
     void Start()
     {
         isInFront = false;
@@ -110,6 +112,17 @@ public class EnemyController : MonoBehaviour
         {
             armyManager.gameManager.GetComponent<GameManager>().setLost(true);
         }
+    }
+
+    public void PlaySound(AudioSource audioSource)
+    {
+        audioSource.Play();
+    }
+
+    public void PlaySound(AudioSource audioSource, AudioClip audioClip)
+    {
+        audioSource.clip = audioClip;
+        audioSource.Play();
     }
 
 }

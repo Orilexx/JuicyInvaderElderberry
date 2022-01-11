@@ -41,6 +41,9 @@ public class Projectile : MonoBehaviour
                 Instantiate(particles, transform.position, transform.rotation);
                 Instantiate(deathParticles, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
 
+                EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
+                enemy.PlaySound(collision.gameObject.GetComponent<AudioSource>(), enemy.deathClip);
+
                 collision.gameObject.GetComponentInParent<ArmyManager>().GetEnemies().Remove(collision.gameObject.GetComponent<EnemyController>());
 
                 gameManager.player.score += collision.gameObject.GetComponent<EnemyController>().score;
@@ -54,12 +57,23 @@ public class Projectile : MonoBehaviour
         else if (collision.gameObject.tag == "Player")
         {
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-            player.actualLife -= instantiater.damage;
 
-            player.lifeImage.fillAmount = (float) player.actualLife / player.life;
+            if (player.shieldIsOn)
+            {
+                player.DisableShield();
+            }
+            else
+            {
+                player.actualLife -= instantiater.damage;
 
-            if (player.actualLife <= 0)
-                player.Lose();
+                player.lifeImage.fillAmount = (float)player.actualLife / player.life;
+
+                if (player.actualLife <= 0)
+                    player.Lose();
+                else
+                    player.PlaySound(player.GetComponent<AudioSource>(), player.audioClips[0]);
+            }
+            
         }
     }
 }

@@ -39,6 +39,7 @@ public class Wave : MonoBehaviour
             if (frontEnemies[i].damage != 0)
             {
                 Rigidbody2D projectile = Instantiate(prefab, frontEnemies[i].spawnWeapon.position, prefab.transform.rotation);
+                gameObject.GetComponent<AudioSource>().Play();
                 projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
             }
 

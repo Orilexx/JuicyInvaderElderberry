@@ -24,6 +24,12 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public int actualLife;
     public Image lifeImage;
 
+    public Sprite playerSprite;
+    public Sprite shieldSprite;
+    public bool shieldIsOn;
+
+    public List<AudioClip> audioClips;
+    //public GameObject loseGO;
 
     private void Start()
     {
@@ -34,6 +40,10 @@ public class PlayerController : MonoBehaviour
         actualLife = life;
 
         lifeImage.fillAmount = actualLife / life;
+
+        gameObject.GetComponent<SpriteRenderer>().sprite = playerSprite;
+
+        shieldIsOn = false;
     }
 
     // Update is called once per frame
@@ -48,6 +58,7 @@ public class PlayerController : MonoBehaviour
             {
                 particlesShoot.Play();
                 Instantiate(prefab, weapon.position, prefab.transform.rotation);
+                PlaySound(weapon.gameObject.GetComponent<AudioSource>());
                 actualCooldown = 0;
             }
         }
@@ -62,6 +73,32 @@ public class PlayerController : MonoBehaviour
 
     public void Lose()
     {
+        PlaySound(gameObject.GetComponent<AudioSource>(), audioClips[5]);
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().setLost(true);
+    }
+
+    public void EnableShield()
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = shieldSprite;
+        shieldIsOn = true;
+        PlaySound(gameObject.GetComponent<AudioSource>(), audioClips[3]);
+    }
+
+    public void DisableShield()
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = playerSprite;
+        shieldIsOn = false;
+        PlaySound(gameObject.GetComponent<AudioSource>(), audioClips[1]);
+    }
+
+    public void PlaySound(AudioSource audioSource)
+    {
+        audioSource.Play();
+    }
+
+    public void PlaySound(AudioSource audioSource, AudioClip audioClip)
+    {
+        audioSource.clip = audioClip;
+        audioSource.Play();
     }
 }
