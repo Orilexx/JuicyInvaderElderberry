@@ -2252,6 +2252,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 952845f15540dc741b96fbdbbb2815c4, type: 3}
   - {fileID: 21300000, guid: 9e2b4ed86c203df4ab5a8bd4eddc4595, type: 3}
   - {fileID: 21300000, guid: 04738147aa63d3e43a04a18d2068165d, type: 3}
+  deathEnemy:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 4170c393363f015489069e3fbe964f18, type: 3}
+  - {fileID: 0}
 --- !u!1 &2011807174
 GameObject:
   m_ObjectHideFlags: 0

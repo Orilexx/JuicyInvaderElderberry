@@ -70,13 +70,14 @@ public class EnemyController : MonoBehaviour
         {
             score = 100;
             damage = 30;
-            gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.enemiesSprite[4];
+            gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.enemiesSprite[5];
+            deathClip = gameManager.deathEnemy[5];
         }
         else if (type == TYPE_ENEMY.CRABY)
         {
             score = 1000;
             damage = 0;
-            gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.enemiesSprite[5];
+            gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.enemiesSprite[6];
         }
     }
     
