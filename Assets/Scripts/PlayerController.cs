@@ -29,7 +29,9 @@ public class PlayerController : MonoBehaviour
     public bool shieldIsOn;
 
     public List<AudioClip> audioClips;
-    //public GameObject loseGO;
+
+    public TYPE_ENEMY _ENEMY;
+    [Range(0, 4)] public int energy;
 
     private void Start()
     {
@@ -44,6 +46,8 @@ public class PlayerController : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = playerSprite;
 
         shieldIsOn = false;
+
+        _ENEMY = TYPE_ENEMY.NONE;
     }
 
     // Update is called once per frame

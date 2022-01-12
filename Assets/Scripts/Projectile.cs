@@ -38,17 +38,34 @@ public class Projectile : MonoBehaviour
         {
             if (gameObject.tag != "EnemyProj")
             {
+                // INSTANTIATION
                 Instantiate(particles, transform.position, transform.rotation);
                 Instantiate(deathParticles, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
 
+                // FX
                 EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
                 enemy.PlaySound(collision.gameObject.GetComponent<AudioSource>(), enemy.deathClip);
 
+                // ENERGY
+                if (gameManager.player._ENEMY == TYPE_ENEMY.NONE && gameManager.player._ENEMY != enemy.type)
+                {
+                    gameManager.player._ENEMY = enemy.type;
+                    gameManager.player.energy = 0;
+                    gameManager.player.energy++;
+                }
+                else if (gameManager.player._ENEMY == enemy.type)
+                {
+                    gameManager.player.energy++;
+                }
+
+                // REMOVE FROM LIST
                 collision.gameObject.GetComponentInParent<ArmyManager>().GetEnemies().Remove(collision.gameObject.GetComponent<EnemyController>());
 
+                // SCORE
                 gameManager.player.score += collision.gameObject.GetComponent<EnemyController>().score;
                 gameManager.player.scoreText.text = "Score : " + gameManager.player.score;
 
+                // DESTRUCTION
                 Destroy(collision.gameObject);
                 Destroy(gameObject);
 

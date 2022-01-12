@@ -38,9 +38,21 @@ public class Wave : MonoBehaviour
 
             if (frontEnemies[i].damage != 0)
             {
-                Rigidbody2D projectile = Instantiate(prefab, frontEnemies[i].spawnWeapon.position, prefab.transform.rotation);
-                gameObject.GetComponent<AudioSource>().Play();
-                projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
+                Rigidbody2D projectile;
+
+                if (frontEnemies[i].type == TYPE_ENEMY.SANTEN)
+                {
+                    projectile = Instantiate(prefab, frontEnemies[i].spawnWeapon.position, Quaternion.LookRotation((prefab.transform.position - gameManager.player.transform.position).normalized));
+                    gameObject.GetComponent<AudioSource>().Play();
+                    projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
+                }
+                else if (frontEnemies[i].type == TYPE_ENEMY.MAI)
+                {
+                    projectile = Instantiate(prefab, frontEnemies[i].spawnWeapon.position, prefab.transform.rotation);
+                    gameObject.GetComponent<AudioSource>().Play();
+                    projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
+                }
+                
             }
 
         }

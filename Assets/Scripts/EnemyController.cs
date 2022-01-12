@@ -10,7 +10,8 @@ public enum TYPE_ENEMY
     NARUTO,
     MOUCHE,
     BOOMER,
-    CRABY
+    CRABY,
+    NONE
 }
 
 public class EnemyController : MonoBehaviour
@@ -111,7 +112,16 @@ public class EnemyController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "DeathCheck")
         {
-            armyManager.gameManager.GetComponent<GameManager>().setLost(true);
+            armyManager.gameManager.player.actualLife -= damage;
+
+            armyManager.gameManager.player.lifeImage.fillAmount = (float)armyManager.gameManager.player.actualLife / armyManager.gameManager.player.life;
+
+            if (armyManager.gameManager.player.actualLife <= 0)
+                armyManager.gameManager.player.Lose();
+            else
+                armyManager.gameManager.player.PlaySound(armyManager.gameManager.player.GetComponent<AudioSource>(), armyManager.gameManager.player.audioClips[0]);
+
+            //armyManager.gameManager.GetComponent<GameManager>().setLost(true);
         }
     }
 
