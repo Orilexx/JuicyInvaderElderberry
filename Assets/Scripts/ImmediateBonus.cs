@@ -66,6 +66,7 @@ public class ImmediateBonus : MonoBehaviour
         if (bonusName == NAME_BONUS.LIFE)
         {
             gameManager.player.actualLife += 25;
+            gameManager.player.PlaySound(gameManager.player.gameObject.GetComponent<AudioSource>(), gameManager.player.audioClips[2]);
 
             if (gameManager.player.actualLife > gameManager.player.life)
             {
@@ -97,6 +98,8 @@ public class ImmediateBonus : MonoBehaviour
     {
         gameManager.timeScale = 0;
         gameObject.GetComponent<SpriteRenderer>().sprite = null;
+
+        gameManager.player.PlaySound(gameManager.player.gameObject.GetComponent<AudioSource>(), gameManager.player.audioClips[4]);
 
         yield return new WaitForSeconds(4f);
 
