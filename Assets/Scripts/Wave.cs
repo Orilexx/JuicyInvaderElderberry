@@ -40,6 +40,11 @@ public class Wave : MonoBehaviour
             {
                 Rigidbody2D projectile;
 
+                while (frontEnemies[i].type != TYPE_ENEMY.SANTEN || frontEnemies[i].type != TYPE_ENEMY.MAI)
+                {
+                    i = Random.Range(0, frontEnemies.Count);
+                }
+
                 if (frontEnemies[i].type == TYPE_ENEMY.SANTEN)
                 {
                     projectile = Instantiate(prefab, frontEnemies[i].spawnWeapon.position, Quaternion.LookRotation((prefab.transform.position - gameManager.player.transform.position).normalized));

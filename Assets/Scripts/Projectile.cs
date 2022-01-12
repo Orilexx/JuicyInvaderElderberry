@@ -47,15 +47,20 @@ public class Projectile : MonoBehaviour
                 enemy.PlaySound(collision.gameObject.GetComponent<AudioSource>(), enemy.deathClip);
 
                 // ENERGY
-                if (gameManager.player._ENEMY == TYPE_ENEMY.NONE && gameManager.player._ENEMY != enemy.type)
+                if (gameManager.player._ENEMY == TYPE_ENEMY.NONE || gameManager.player._ENEMY != enemy.type)
                 {
-                    gameManager.player._ENEMY = enemy.type;
-                    gameManager.player.energy = 0;
-                    gameManager.player.energy++;
+                    if(gameManager.player.energy != 4)
+                    {
+                        gameManager.player._ENEMY = enemy.type;
+                        gameManager.player.energy = 0;
+                        gameManager.player.energy++;
+                    }
+                    
                 }
                 else if (gameManager.player._ENEMY == enemy.type)
                 {
-                    gameManager.player.energy++;
+                    if (gameManager.player.energy < 4)
+                        gameManager.player.energy++;
                 }
 
                 // REMOVE FROM LIST
