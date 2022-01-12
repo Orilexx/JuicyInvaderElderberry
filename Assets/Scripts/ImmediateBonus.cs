@@ -31,7 +31,7 @@ public class ImmediateBonus : MonoBehaviour
 
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
-        bonusName = (NAME_BONUS)Random.Range(0, 3);
+        bonusName = (NAME_BONUS)Random.Range(0, 4);
 
         gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.bonusSprite[((int)bonusName)];
 
@@ -50,13 +50,12 @@ public class ImmediateBonus : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             UseEffect();
-            Destroy(gameObject);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Destroyer")
+        if (collision.gameObject.tag == "BonusDestroyer")
         {
             Destroy(gameObject);
         }
@@ -67,44 +66,43 @@ public class ImmediateBonus : MonoBehaviour
         if (bonusName == NAME_BONUS.LIFE)
         {
             gameManager.player.actualLife += 25;
+            Debug.Log(gameManager.player.actualLife += 25);
             if (gameManager.player.actualLife > 40)
             {
                 gameManager.player.actualLife = 40;
             }
             gameManager.player.lifeImage.fillAmount = (float)gameManager.player.actualLife / gameManager.player.life;
+
+            Destroy(gameObject);
         }
         else if (bonusName == NAME_BONUS.SHIELD)
         {
             gameManager.player.EnableShield();
+
+            Destroy(gameObject);
         }
         else if (bonusName == NAME_BONUS.TIMESTOP)
         {
-            //TimeStop();
+            StartCoroutine(TimeStop());
         }
         else if (bonusName == NAME_BONUS.RESERVE)
         {
+            Debug.Log("RAS");
 
+            Destroy(gameObject);
         }
     }
 
     IEnumerator TimeStop()
     {
-        float armySpeed = 0f;
-
-        for (int i = 0; i < gameManager.armiesManager.armies.Count; i++)
-        {
-            if (i == 0)
-            {
-                armySpeed = gameManager.armiesManager.armies[i].moveSpeed;
-            }
-            gameManager.armiesManager.armies[i].moveSpeed = 0f;
-        }
+        gameManager.timeScale = 0;
+        Debug.Log("Timestop");
 
         yield return new WaitForSeconds(4f);
 
-        for (int i = 0; i < gameManager.armiesManager.armies.Count; i++)
-        {
-            gameManager.armiesManager.armies[i].moveSpeed = armySpeed;
-        }
+        gameManager.timeScale = 1;
+        Debug.Log("Timeplay");
+
+        Destroy(gameObject);
     }
 }

@@ -26,7 +26,7 @@ public class Wave : MonoBehaviour
     void Update()
     {
 
-        timeLeft -= Time.deltaTime;
+        timeLeft -= Time.deltaTime * gameManager.timeScale;
 
         if (timeLeft <= 0)
         {
@@ -95,11 +95,13 @@ public class Wave : MonoBehaviour
             //    gameObject.GetComponent<AudioSource>().Play();
             //    projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
             //}
-            /*else */if (frontEnemies[i].type == TYPE_ENEMY.MAI || frontEnemies[i].type == TYPE_ENEMY.SANTEN)
+            /*else */
+            if (frontEnemies[i].type == TYPE_ENEMY.MAI || frontEnemies[i].type == TYPE_ENEMY.SANTEN)
             {
                 projectile = Instantiate(prefab, frontEnemies[i].spawnWeapon.position, prefab.transform.rotation);
                 gameObject.GetComponent<AudioSource>().Play();
                 projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
+                
             }
             else
             {

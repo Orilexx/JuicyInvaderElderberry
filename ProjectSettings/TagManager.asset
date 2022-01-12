@@ -12,6 +12,7 @@ TagManager:
   - EnemyProj
   - Wall2
   - ImmediateBonus
+  - BonusDestroyer
   layers:
   - Default
   - TransparentFX

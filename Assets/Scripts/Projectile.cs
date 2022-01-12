@@ -28,7 +28,10 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.MovePosition(rb.position + Vector2.up * moveSpeed * Time.deltaTime);
+        if (instantiater)
+            rb.MovePosition(rb.position + Vector2.up * moveSpeed * Time.deltaTime * gameManager.timeScale);
+        else
+            rb.MovePosition(rb.position + Vector2.up * moveSpeed * Time.deltaTime);
     }
 
   

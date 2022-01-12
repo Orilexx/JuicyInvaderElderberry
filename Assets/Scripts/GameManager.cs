@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     public List<Sprite> bonusSprite;
 
+    public int timeScale = 1;
+
     int i = 0;
 
     void Start()

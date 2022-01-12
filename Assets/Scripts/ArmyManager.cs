@@ -33,11 +33,11 @@ public class ArmyManager : MonoBehaviour
             if (movesRight)
             {
 
-                rb.MovePosition(rb.position + Vector2.right * moveSpeed * Time.fixedDeltaTime);
+                rb.MovePosition(rb.position + Vector2.right * moveSpeed * Time.fixedDeltaTime * gameManager.timeScale);
             }
             else
             {
-                rb.MovePosition(rb.position + Vector2.left * moveSpeed * Time.fixedDeltaTime);
+                rb.MovePosition(rb.position + Vector2.left * moveSpeed * Time.fixedDeltaTime * gameManager.timeScale);
             }
         }
     }

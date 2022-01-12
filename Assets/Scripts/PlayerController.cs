@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public Text scoreText;
 
     public int life = 50;
-    [HideInInspector] public int actualLife;
+    public int actualLife;
     public Image lifeImage;
 
     public Sprite playerSprite;
@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
 
         movement.x = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             if (actualCooldown >= shootCooldown)
             {
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
         }
         actualCooldown += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.W) && energy == 4)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && energy == 4)
         {
             UseBonus();
         }
