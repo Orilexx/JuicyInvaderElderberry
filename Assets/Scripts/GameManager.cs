@@ -14,13 +14,16 @@ public class GameManager : MonoBehaviour
     public CameraController GameCamera;
 
     public List<Wave> waves;
-    [SerializeField] public Wave armiesManager;
+    public Wave armiesManager;
+    public Wave crabyWave;
 
     public List<Sprite> enemiesSprite;
 
     public List<Sprite> bonusSprite;
 
     public int timeScale = 1;
+
+    public ImmediateBonus immediateBonus;
 
     int i = 0;
 

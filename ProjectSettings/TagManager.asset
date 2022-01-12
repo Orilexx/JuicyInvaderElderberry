@@ -13,6 +13,7 @@ TagManager:
   - Wall2
   - ImmediateBonus
   - BonusDestroyer
+  - CrabyDestroyer
   layers:
   - Default
   - TransparentFX

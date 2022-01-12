@@ -133,6 +133,11 @@ public class Projectile : MonoBehaviour
         enemy.gameObject.GetComponent<SpriteRenderer>().sprite = null;
         enemy.gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
+        if (enemy.type == TYPE_ENEMY.CRABY)
+        {
+            Instantiate(gameManager.immediateBonus, enemy.transform.position, gameManager.immediateBonus.transform.rotation);
+        }
+
         yield return new WaitForSeconds(enemy.deathClip.length);
 
         Destroy(collision.gameObject);

@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1866359108432930292}
-  moveSpeed: 150
+  moveSpeed: 100
   particles: {fileID: 6038337497785205914, guid: 50a171ca05ed9c748978a24f0f9b0b49, type: 3}
   deathParticles: {fileID: 7747911442235987759, guid: cff085ac78063844eb9a531bc25712a3, type: 3}
   instantiater: {fileID: 0}

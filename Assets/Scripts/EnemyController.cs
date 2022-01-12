@@ -38,7 +38,10 @@ public class EnemyController : MonoBehaviour
 
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
-        deathClip = gameManager.armiesManager.deathClip;
+        if (type != TYPE_ENEMY.CRABY)
+            deathClip = gameManager.armiesManager.deathClip;
+        else
+            deathClip = gameManager.crabyWave.deathClip;
 
         if (type == TYPE_ENEMY.MAI)
         {
@@ -89,14 +92,16 @@ public class EnemyController : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(spawnWeapon.transform.position, -Vector2.up * 2);
 
-        if (hit.collider.gameObject.CompareTag("Enemy"))
+        if (type != TYPE_ENEMY.CRABY)
         {
-            return false;
+            if (hit.collider.gameObject.CompareTag("Enemy"))
+                return false;
+            else
+                return true;
         }
         else
-        {
             return true;
-        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -105,13 +110,19 @@ public class EnemyController : MonoBehaviour
 
         if (collision.gameObject.tag == "Wall")
         {
-            armyManager.movesRight = false;
-            armyManager.rb.position = new Vector2(armyManager.rb.position.x, armyManager.rb.position.y - armyManager.padding);
+            if (type != TYPE_ENEMY.CRABY)
+            {
+                armyManager.movesRight = false;
+                armyManager.rb.position = new Vector2(armyManager.rb.position.x, armyManager.rb.position.y - armyManager.padding);
+            }
         }
         else if (collision.gameObject.tag == "Wall2")
         {
-            armyManager.movesRight = true;
-            armyManager.rb.position = new Vector2(armyManager.rb.position.x, armyManager.rb.position.y - armyManager.padding);
+            if (type != TYPE_ENEMY.CRABY)
+            {
+                armyManager.movesRight = true;
+                armyManager.rb.position = new Vector2(armyManager.rb.position.x, armyManager.rb.position.y - armyManager.padding);
+            }
         }
         else if (collision.gameObject.tag == "DeathCheck")
         {
@@ -125,6 +136,10 @@ public class EnemyController : MonoBehaviour
                 armyManager.gameManager.player.PlaySound(armyManager.gameManager.player.GetComponent<AudioSource>(), armyManager.gameManager.player.audioClips[0]);
 
             //armyManager.gameManager.GetComponent<GameManager>().setLost(true);
+        }
+        else if (collision.gameObject.tag == "CrabyDestroyer")
+        {
+            Destroy(gameObject);
         }
     }
 

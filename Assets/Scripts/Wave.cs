@@ -16,6 +16,9 @@ public class Wave : MonoBehaviour
 
     GameManager gameManager;
 
+    public AudioClip deathClip;
+    public AudioClip santenShieldClip;
+
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -31,7 +34,7 @@ public class Wave : MonoBehaviour
         if (timeLeft <= 0)
         {
             timeLeft = timer;
-
+            
             SetRowEnemy();
 
             InstanceProj();
