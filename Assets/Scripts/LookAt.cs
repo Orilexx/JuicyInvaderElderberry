@@ -16,14 +16,21 @@ public class LookAt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 targetDirection = gameManager.player.transform.position - gameObject.transform.position;
+
+        Debug.Log("OUI" + gameObject.transform.TransformPoint(gameObject.transform.position));
+        Debug.Log("NON" + gameManager.player.transform.position);
+        Vector3 targetDirection = gameManager.player.transform.position - gameObject.transform.TransformPoint(gameObject.transform.position);
 
         float singleStep = speed * Time.deltaTime;
 
-        Vector3 newDirection = Vector3.RotateTowards(gameObject.transform.forward, targetDirection, singleStep, 0.0f);
+        Vector3 newDirection = Vector3.RotateTowards(gameObject.transform.TransformPoint(gameObject.transform.position), targetDirection, singleStep, 0.0f);
         //newDirection.x = 0;
         //newDirection.y = 180;
 
-        transform.rotation = Quaternion.LookRotation(newDirection);
+        Vector2 lookDir =  gameObject.transform.position - gameManager.player.transform.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, angle);
+        //transform.rotation = Quaternion.LookRotation(newDirection);
+        //gameObject.transform.LookAt(gameObject.transform);
     }
 }
