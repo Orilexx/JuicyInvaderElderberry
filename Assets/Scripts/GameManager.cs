@@ -17,7 +17,9 @@ public class GameManager : MonoBehaviour
 
     public List<Sprite> enemiesSprite;
 
-    public List<AudioClip> deathEnemy;
+    public List<AudioClip> specialClipsEnemy;
+
+    public List<Sprite> bonusSprite;
 
     int i = 0;
 

@@ -44,7 +44,7 @@ public class Projectile : MonoBehaviour
 
                 // FX
                 EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
-                enemy.PlaySound(collision.gameObject.GetComponent<AudioSource>(), enemy.deathClip);
+                enemy.PlaySound(collision.gameObject.GetComponent<AudioSource>(), enemy.specialEnemyClip);
 
                 // ENERGY
                 if (gameManager.player._ENEMY == TYPE_ENEMY.NONE || gameManager.player._ENEMY != enemy.type)
@@ -54,13 +54,27 @@ public class Projectile : MonoBehaviour
                         gameManager.player._ENEMY = enemy.type;
                         gameManager.player.energy = 0;
                         gameManager.player.energy++;
+                        gameManager.player.energyBar.sprite = gameManager.player.energyLiquids[gameManager.player.energy];
                     }
                     
                 }
                 else if (gameManager.player._ENEMY == enemy.type)
                 {
                     if (gameManager.player.energy < 4)
+                    {
+                        gameManager.player.energyContainer.sprite = gameManager.player.notFullEnergy;
                         gameManager.player.energy++;
+                        gameManager.player.energyBar.sprite = gameManager.player.energyLiquids[gameManager.player.energy];
+
+                        if (gameManager.player.energy == 4)
+                        {
+                            gameManager.player.energyContainer.sprite = gameManager.player.fullEnergy;
+
+                            gameManager.player.bonusUI.gameObject.SetActive(true);
+                            gameManager.player.bonusUI.sprite = gameManager.bonusSprite[((int)enemy.type) + 4];
+                        }
+
+                    }
                 }
 
                 // REMOVE FROM LIST

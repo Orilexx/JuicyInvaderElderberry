@@ -31,7 +31,23 @@ public class PlayerController : MonoBehaviour
     public List<AudioClip> audioClips;
 
     public TYPE_ENEMY _ENEMY;
+
+    public Image bonusUI;
+
+    [Header("Energy")]
+
     [Range(0, 4)] public int energy;
+    [Space(10)]
+
+    public SpriteRenderer energyContainer;
+    public SpriteRenderer energyBar;
+    [Space(10)]
+
+    public Sprite fullEnergy;
+    public Sprite notFullEnergy;
+    [Space(10)]
+
+    public List<Sprite> energyLiquids;
 
     private void Start()
     {
@@ -48,6 +64,11 @@ public class PlayerController : MonoBehaviour
         shieldIsOn = false;
 
         _ENEMY = TYPE_ENEMY.NONE;
+
+        energy = 0;
+        energyBar.sprite = energyLiquids[energy];
+
+        bonusUI.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -66,8 +87,12 @@ public class PlayerController : MonoBehaviour
                 actualCooldown = 0;
             }
         }
-
         actualCooldown += Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.W) && energy == 4)
+        {
+            UseBonus();
+        }
     }
 
     void FixedUpdate()
@@ -104,5 +129,14 @@ public class PlayerController : MonoBehaviour
     {
         audioSource.clip = audioClip;
         audioSource.Play();
+    }
+
+    public void UseBonus()
+    {
+
+        energy = 0;
+        energyBar.sprite = energyLiquids[energy];
+        bonusUI.gameObject.SetActive(false);
+
     }
 }

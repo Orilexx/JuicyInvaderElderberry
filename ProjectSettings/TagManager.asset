@@ -11,6 +11,7 @@ TagManager:
   - GameManager
   - EnemyProj
   - Wall2
+  - ImmediateBonus
   layers:
   - Default
   - TransparentFX

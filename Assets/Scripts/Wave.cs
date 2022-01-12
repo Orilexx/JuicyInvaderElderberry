@@ -34,31 +34,7 @@ public class Wave : MonoBehaviour
 
             SetRowEnemy();
 
-            int i = Random.Range(0, frontEnemies.Count);
-
-            if (frontEnemies[i].damage != 0)
-            {
-                Rigidbody2D projectile;
-
-                while (frontEnemies[i].type != TYPE_ENEMY.SANTEN || frontEnemies[i].type != TYPE_ENEMY.MAI)
-                {
-                    i = Random.Range(0, frontEnemies.Count);
-                }
-
-                if (frontEnemies[i].type == TYPE_ENEMY.SANTEN)
-                {
-                    projectile = Instantiate(prefab, frontEnemies[i].spawnWeapon.position, Quaternion.LookRotation((prefab.transform.position - gameManager.player.transform.position).normalized));
-                    gameObject.GetComponent<AudioSource>().Play();
-                    projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
-                }
-                else if (frontEnemies[i].type == TYPE_ENEMY.MAI)
-                {
-                    projectile = Instantiate(prefab, frontEnemies[i].spawnWeapon.position, prefab.transform.rotation);
-                    gameObject.GetComponent<AudioSource>().Play();
-                    projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
-                }
-                
-            }
+            InstanceProj();
 
         }
 
@@ -98,5 +74,39 @@ public class Wave : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void InstanceProj()
+    {
+
+        int i = Random.Range(0, frontEnemies.Count);
+
+        if (frontEnemies[i].damage != 0)
+        {
+            Rigidbody2D projectile;
+
+            //if (frontEnemies[i].type == TYPE_ENEMY.SANTEN)
+            //{
+            //    Vector3 direction = (prefab.transform.position - gameManager.player.transform.position);
+            //    //direction.x = 0;
+            //    //direction.y = 0;
+
+            //    projectile = Instantiate(prefab, frontEnemies[i].spawnWeapon.position, Quaternion.LookRotation(direction));
+            //    gameObject.GetComponent<AudioSource>().Play();
+            //    projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
+            //}
+            /*else */if (frontEnemies[i].type == TYPE_ENEMY.MAI || frontEnemies[i].type == TYPE_ENEMY.SANTEN)
+            {
+                projectile = Instantiate(prefab, frontEnemies[i].spawnWeapon.position, prefab.transform.rotation);
+                gameObject.GetComponent<AudioSource>().Play();
+                projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
+            }
+            else
+            {
+                InstanceProj();
+            }
+
+        }
+
     }
 }
