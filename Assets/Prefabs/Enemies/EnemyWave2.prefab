@@ -164,6 +164,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &4199942909836539670
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -420,6 +421,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &5385487023638285100
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -676,6 +678,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &541437531686988550
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -962,6 +965,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &5322811864886211029
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1278,6 +1282,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &792126382618639663
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1504,6 +1509,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &7362748087691561310
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1760,6 +1766,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &3577970960741539138
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2136,6 +2143,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &1924790393531629217
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2362,6 +2370,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &7028360463425012076
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2678,6 +2687,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &8013542479459425235
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2904,6 +2914,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &6847176919405983505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3130,6 +3141,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &378054693448969047
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3356,6 +3368,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &1250968743534923784
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3582,6 +3595,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &7098150961704835855
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3808,6 +3822,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &7075679654859532674
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4034,6 +4049,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &1045195876001833498
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4398,6 +4414,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &74152014132972095
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4624,6 +4641,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &943972020484378666
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4850,6 +4868,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &2010831066760338213
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5136,6 +5155,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &5771656204486572182
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5308,6 +5328,8 @@ MonoBehaviour:
   prefab: {fileID: 1866359108432930292, guid: b1a31ba29a3184044bc1bcac5bca871f, type: 3}
   timer: 3
   frontEnemies: []
+  deathClip: {fileID: 8300000, guid: 7286c12fffbacf64384f7ae4b3f0fd7e, type: 3}
+  santenShieldClip: {fileID: 8300000, guid: bfa2a686f2fda6c49a6aef94efdadcb9, type: 3}
 --- !u!82 &6346181676969508673
 AudioSource:
   m_ObjectHideFlags: 0

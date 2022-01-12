@@ -52,7 +52,7 @@ public class Projectile : MonoBehaviour
 
                 // FX
                 EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
-                enemy.PlaySound(collision.gameObject.GetComponent<AudioSource>(), enemy.specialEnemyClip);
+                StartCoroutine(EnemyDestruct(collision, enemy));
 
                 // ENERGY
                 if (gameManager.player._ENEMY == TYPE_ENEMY.NONE || gameManager.player._ENEMY != enemy.type)
@@ -80,6 +80,7 @@ public class Projectile : MonoBehaviour
 
                             gameManager.player.bonusUI.gameObject.SetActive(true);
                             gameManager.player.bonusUI.sprite = gameManager.bonusSprite[((int)enemy.type) + 4];
+                            gameManager.player.PlaySound(gameManager.player.gameObject.GetComponent<AudioSource>(), gameManager.player.audioClips[6]);
                         }
 
                     }
@@ -93,7 +94,7 @@ public class Projectile : MonoBehaviour
                 gameManager.player.scoreText.text = "Score : " + gameManager.player.score;
 
                 // DESTRUCTION
-                Destroy(collision.gameObject);
+                
                 Destroy(gameObject);
 
             }
@@ -124,5 +125,16 @@ public class Projectile : MonoBehaviour
             }
             
         }
+    }
+
+    IEnumerator EnemyDestruct(Collider2D collision, EnemyController enemy)
+    {
+        enemy.PlaySound(collision.gameObject.GetComponent<AudioSource>(), enemy.deathClip);
+        enemy.gameObject.GetComponent<SpriteRenderer>().sprite = null;
+        enemy.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
+        yield return new WaitForSeconds(enemy.deathClip.length);
+
+        Destroy(collision.gameObject);
     }
 }

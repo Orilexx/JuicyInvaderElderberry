@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public Text scoreText;
 
     public int life = 50;
-    public int actualLife;
+    [HideInInspector] public int actualLife;
     public Image lifeImage;
 
     public Sprite playerSprite;

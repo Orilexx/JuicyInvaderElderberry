@@ -270,6 +270,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ea46a34cbe8fcf04b9004b05ac1d2528, type: 3}
   - {fileID: 8300000, guid: ff0a04c9879dc734f8722c46aa1728ab, type: 3}
   - {fileID: 8300000, guid: 230dd0a8ba6be864a9462e6968683ce3, type: 3}
+  - {fileID: 8300000, guid: 7dd7adaa0c4804441882d28da542be2d, type: 3}
   _ENEMY: 0
   bonusUI: {fileID: 0}
   energy: 0

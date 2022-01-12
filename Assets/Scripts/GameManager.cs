@@ -18,8 +18,6 @@ public class GameManager : MonoBehaviour
 
     public List<Sprite> enemiesSprite;
 
-    public List<AudioClip> specialClipsEnemy;
-
     public List<Sprite> bonusSprite;
 
     public int timeScale = 1;

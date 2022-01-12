@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
     GameManager gameManager;
 
     public AudioClip deathClip;
-    [HideInInspector] public AudioClip specialEnemyClip;
+    public AudioClip specialEnemyClip;
 
     void Start()
     {
@@ -37,6 +37,8 @@ public class EnemyController : MonoBehaviour
         Physics2D.queriesHitTriggers = false;
 
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
+        deathClip = gameManager.armiesManager.deathClip;
 
         if (type == TYPE_ENEMY.MAI)
         {
@@ -49,21 +51,19 @@ public class EnemyController : MonoBehaviour
             score = 100;
             damage = 10;
             gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.enemiesSprite[1];
-            specialEnemyClip = gameManager.specialClipsEnemy[0];
         }
         else if (type == TYPE_ENEMY.SANTEN)
         {
             score = 200;
             damage = 10;
             gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.enemiesSprite[2];
-            specialEnemyClip = gameManager.specialClipsEnemy[1];
+            specialEnemyClip = gameManager.armiesManager.santenShieldClip;
         }
         else if (type == TYPE_ENEMY.NARUTO)
         {
             score = 200;
             damage = 20;
             gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.enemiesSprite[3];
-            specialEnemyClip = gameManager.specialClipsEnemy[2];
         }
         else if (type == TYPE_ENEMY.MOUCHE)
         {
@@ -76,7 +76,6 @@ public class EnemyController : MonoBehaviour
             score = 100;
             damage = 30;
             gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.enemiesSprite[5];
-            specialEnemyClip = gameManager.specialClipsEnemy[4];
         }
         else if (type == TYPE_ENEMY.CRABY)
         {

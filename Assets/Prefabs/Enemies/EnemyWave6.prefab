@@ -194,6 +194,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &3253055637184370977
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -450,6 +451,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &6069949341950112665
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -706,6 +708,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &6007545416107603699
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -962,6 +965,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &2053995669161466347
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1338,6 +1342,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &8278208557660685451
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1564,6 +1569,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &1012434882880538904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1790,6 +1796,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &5044864972029882072
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2046,6 +2053,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &1162732751292565333
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2332,6 +2340,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &495171155867513996
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2558,6 +2567,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &4824486230378399015
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2814,6 +2824,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &4314098467255821338
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3160,6 +3171,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &1083372866492765799
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3476,6 +3488,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &3281944280989932212
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3702,6 +3715,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &3627127930026777886
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3928,6 +3942,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &8075513549983451717
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4214,6 +4229,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &4904018547681033040
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4440,6 +4456,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &257752762280601190
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4666,6 +4683,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &859406024684786036
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4952,6 +4970,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &5901443159644528158
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5178,6 +5197,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &3060617449926750629
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5404,6 +5424,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &827680515787643840
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5630,6 +5651,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &656508582002949542
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5856,6 +5878,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &2021312557126606066
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6082,6 +6105,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &7680799512739715354
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6308,6 +6332,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &1918452037121983948
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6692,6 +6717,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &915978998829139241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6918,6 +6944,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &4021409723380523316
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7144,6 +7171,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &1794165683847632455
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7460,6 +7488,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &3751259423495421050
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7716,6 +7745,7 @@ MonoBehaviour:
   damage: 0
   type: 0
   deathClip: {fileID: 0}
+  specialEnemyClip: {fileID: 0}
 --- !u!61 &1187653148660687481
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7888,6 +7918,8 @@ MonoBehaviour:
   prefab: {fileID: 1866359108432930292, guid: b1a31ba29a3184044bc1bcac5bca871f, type: 3}
   timer: 3
   frontEnemies: []
+  deathClip: {fileID: 8300000, guid: 7286c12fffbacf64384f7ae4b3f0fd7e, type: 3}
+  santenShieldClip: {fileID: 8300000, guid: bfa2a686f2fda6c49a6aef94efdadcb9, type: 3}
 --- !u!82 &4036431706382593278
 AudioSource:
   m_ObjectHideFlags: 0
