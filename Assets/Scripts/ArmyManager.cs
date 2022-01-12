@@ -6,7 +6,7 @@ public class ArmyManager : MonoBehaviour
 {
     public bool movesRight;
     public Rigidbody2D rb;
-    [SerializeField] float moveSpeed;
+    [SerializeField] public float moveSpeed;
     [SerializeField] List<EnemyController> enemies;
     public float padding;
 

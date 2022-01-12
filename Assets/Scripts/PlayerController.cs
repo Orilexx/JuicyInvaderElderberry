@@ -138,7 +138,6 @@ public class PlayerController : MonoBehaviour
 
     public void UseBonus()
     {
-
         energy = 0;
         energyBar.sprite = energyLiquids[energy];
         bonusUI.gameObject.SetActive(false);

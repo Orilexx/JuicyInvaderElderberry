@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public CameraController GameCamera;
 
     public List<Wave> waves;
-    [SerializeField] Wave armiesManager;
+    [SerializeField] public Wave armiesManager;
 
     public List<Sprite> enemiesSprite;
 
