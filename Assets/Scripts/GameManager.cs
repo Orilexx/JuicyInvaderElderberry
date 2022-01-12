@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public PlayerController player;
 
     private bool isLost = false;
+    public CameraController GameCamera;
 
     public List<Wave> waves;
     [SerializeField] Wave armiesManager;

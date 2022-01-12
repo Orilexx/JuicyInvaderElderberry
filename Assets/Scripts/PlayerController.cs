@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
     [Space(10)]
 
     public List<Sprite> energyLiquids;
+    Color lerpedColor = Color.green;
 
     private void Start()
     {
@@ -58,6 +59,10 @@ public class PlayerController : MonoBehaviour
         actualLife = life;
 
         lifeImage.fillAmount = actualLife / life;
+
+        lerpedColor = Color.Lerp(Color.red, Color.green, actualLife / life);
+
+        lifeImage.color = lerpedColor;
 
         gameObject.GetComponent<SpriteRenderer>().sprite = playerSprite;
 

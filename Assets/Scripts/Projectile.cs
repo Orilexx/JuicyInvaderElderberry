@@ -14,9 +14,14 @@ public class Projectile : MonoBehaviour
 
     /*[HideInInspector]*/ public EnemyController instantiater;
 
+    private CameraController cameraController;
+
+    private Color lerpedColor;
+
     private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        cameraController = gameManager.GameCamera;
 
     }
 
@@ -100,9 +105,14 @@ public class Projectile : MonoBehaviour
             }
             else
             {
+                cameraController.OnPlayerCollision();
                 player.actualLife -= instantiater.damage;
 
                 player.lifeImage.fillAmount = (float)player.actualLife / player.life;
+
+                lerpedColor = Color.Lerp(Color.red, Color.green, (float)player.actualLife / player.life);
+
+                player.lifeImage.color = lerpedColor;
 
                 if (player.actualLife <= 0)
                     player.Lose();
