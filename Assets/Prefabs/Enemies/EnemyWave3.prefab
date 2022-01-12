@@ -5430,6 +5430,7 @@ MonoBehaviour:
   frontEnemies: []
   deathClip: {fileID: 8300000, guid: 7286c12fffbacf64384f7ae4b3f0fd7e, type: 3}
   santenShieldClip: {fileID: 8300000, guid: bfa2a686f2fda6c49a6aef94efdadcb9, type: 3}
+  crabySpawnTime: 5
 --- !u!82 &6302198885598922570
 AudioSource:
   m_ObjectHideFlags: 0

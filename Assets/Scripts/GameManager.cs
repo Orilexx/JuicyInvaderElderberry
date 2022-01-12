@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     public List<Wave> waves;
     public Wave armiesManager;
+
+    public Wave crabyWavePrefab;
     public Wave crabyWave;
 
     public List<Sprite> enemiesSprite;
@@ -33,6 +35,9 @@ public class GameManager : MonoBehaviour
         gameObject.SetActive(true);
         armiesManager = null;
         Time.timeScale = 1;
+
+
+
     }
 
     // Update is called once per frame
@@ -54,7 +59,6 @@ public class GameManager : MonoBehaviour
             armiesManager = Instantiate(waves[i], spawner.position, waves[i].transform.rotation);
             i++;
         }
-        
 
         //if(armyManager == null)
         //{

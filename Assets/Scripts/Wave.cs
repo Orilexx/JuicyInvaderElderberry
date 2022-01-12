@@ -19,11 +19,19 @@ public class Wave : MonoBehaviour
     public AudioClip deathClip;
     public AudioClip santenShieldClip;
 
+    public float crabySpawnTime = 5f;
+    private float crabyTimeLeft;
+    private bool crabyInstance;
+
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
         timeLeft = timer;
+
+        crabyTimeLeft = crabySpawnTime;
+        crabyInstance = false;
+
     }
 
     void Update()
@@ -39,6 +47,38 @@ public class Wave : MonoBehaviour
 
             InstanceProj();
 
+        }
+
+
+        crabyTimeLeft -= Time.deltaTime * gameManager.timeScale;
+
+        if (crabyTimeLeft <= 0 && gameManager.crabyWave == null && !crabyInstance)
+        {
+            // CRABY INSTANTIATION
+            Debug.Log("TimeLeft : " + crabyTimeLeft);
+            //Debug.Log("SpawnTime : " + crabySpawnTime);
+
+            int k = Random.Range(0, 2);
+            float positionY = Random.Range(-1.5f, 3f);
+
+            if (k == 0)
+            {
+                Vector3 position1 = new Vector3(-9.7f, positionY, 0);
+
+                Wave crabyW = Instantiate(gameManager.crabyWavePrefab, position1, gameManager.crabyWavePrefab.transform.rotation);
+                gameManager.crabyWave = crabyW;
+                crabyW.armies[0].movesRight = true;
+            }
+            else if (k == 1)
+            {
+                Vector3 position2 = new Vector3(9.7f, positionY, 0);
+
+                Wave crabyW = Instantiate(gameManager.crabyWavePrefab, position2, gameManager.crabyWavePrefab.transform.rotation);
+                gameManager.crabyWave = crabyW;
+                crabyW.armies[0].movesRight = false;
+            }
+
+            crabyInstance = true;
         }
 
     }

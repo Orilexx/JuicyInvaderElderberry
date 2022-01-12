@@ -137,7 +137,11 @@ public class EnemyController : MonoBehaviour
 
             //armyManager.gameManager.GetComponent<GameManager>().setLost(true);
         }
-        else if (collision.gameObject.tag == "CrabyDestroyer")
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "CrabyDestroyer")
         {
             Destroy(gameObject);
         }
