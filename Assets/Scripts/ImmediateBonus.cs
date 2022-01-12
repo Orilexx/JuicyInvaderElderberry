@@ -69,7 +69,7 @@ public class ImmediateBonus : MonoBehaviour
             gameManager.player.actualLife += 25;
             if (gameManager.player.actualLife > 40)
             {
-                gameManager.player.actualLife = 25;
+                gameManager.player.actualLife = 40;
             }
             gameManager.player.lifeImage.fillAmount = (float)gameManager.player.actualLife / gameManager.player.life;
         }
