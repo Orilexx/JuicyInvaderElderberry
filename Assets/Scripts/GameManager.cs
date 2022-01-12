@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     private bool isLost = false;
 
     public List<Wave> waves;
-    [SerializeField] Wave armiesManager;
+    [SerializeField] public Wave armiesManager;
 
     public List<Sprite> enemiesSprite;
 
