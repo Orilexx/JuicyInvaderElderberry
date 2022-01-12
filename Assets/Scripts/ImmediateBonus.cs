@@ -66,10 +66,10 @@ public class ImmediateBonus : MonoBehaviour
         if (bonusName == NAME_BONUS.LIFE)
         {
             gameManager.player.actualLife += 25;
-            Debug.Log(gameManager.player.actualLife += 25);
-            if (gameManager.player.actualLife > 40)
+
+            if (gameManager.player.actualLife > gameManager.player.life)
             {
-                gameManager.player.actualLife = 40;
+                gameManager.player.actualLife = gameManager.player.life;
             }
             gameManager.player.lifeImage.fillAmount = (float)gameManager.player.actualLife / gameManager.player.life;
 
@@ -96,12 +96,11 @@ public class ImmediateBonus : MonoBehaviour
     IEnumerator TimeStop()
     {
         gameManager.timeScale = 0;
-        Debug.Log("Timestop");
+        gameObject.GetComponent<SpriteRenderer>().sprite = null;
 
         yield return new WaitForSeconds(4f);
 
         gameManager.timeScale = 1;
-        Debug.Log("Timeplay");
 
         Destroy(gameObject);
     }
