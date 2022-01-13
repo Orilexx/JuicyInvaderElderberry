@@ -6,8 +6,8 @@ public enum TYPE_PROJECTILE
 {
     BASIC,
     PIERCE,
-    ENERGY,
-    MULTIPLE
+    MULTIPLE,
+    ENERGY
 }
 
 public class PlayerController : MonoBehaviour
@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Transform weapon;
-    [SerializeField] Rigidbody2D prefab;
+    [SerializeField] GameObject prefab;
 
     public TYPE_PROJECTILE projectileType;
 
@@ -48,6 +48,10 @@ public class PlayerController : MonoBehaviour
     [Space(10)]
 
     public List<AudioClip> audioClips;
+
+    [Header("Projectiles")]
+    public List<AudioClip> shootClips;
+    public List<GameObject> prefabs;
 
     [HideInInspector] public TYPE_ENEMY _ENEMY;
 
@@ -108,8 +112,11 @@ public class PlayerController : MonoBehaviour
             if (actualCooldown >= shootCooldown)
             {
                 particlesShoot.Play();
+
+                PlaySound(weapon.gameObject.GetComponent<AudioSource>(), shootClips[((int)projectileType)]);
+                prefab = prefabs[((int)projectileType)];
+
                 Instantiate(prefab, weapon.position, prefab.transform.rotation);
-                PlaySound(weapon.gameObject.GetComponent<AudioSource>());
                 actualCooldown = 0;
             }
         }

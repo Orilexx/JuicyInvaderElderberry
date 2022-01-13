@@ -252,7 +252,8 @@ MonoBehaviour:
   moveSpeed: 8
   rb: {fileID: 1274201279097430955}
   weapon: {fileID: 1335172566}
-  prefab: {fileID: 1866359108432930292, guid: 516dadf3f0d69e443979e32858d9b12c, type: 3}
+  prefab: {fileID: 7464134426239613253, guid: 516dadf3f0d69e443979e32858d9b12c, type: 3}
+  projectileType: 0
   shootCooldown: 1.5
   particlesShoot: {fileID: 0}
   score: 0
@@ -274,6 +275,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ff0a04c9879dc734f8722c46aa1728ab, type: 3}
   - {fileID: 8300000, guid: 230dd0a8ba6be864a9462e6968683ce3, type: 3}
   - {fileID: 8300000, guid: 7dd7adaa0c4804441882d28da542be2d, type: 3}
+  shootClips:
+  - {fileID: 8300000, guid: 3ddd5f86ba8e25f4fbef5fec081561ff, type: 3}
+  - {fileID: 8300000, guid: 70743967fca5e91438293fd410a23e38, type: 3}
+  - {fileID: 8300000, guid: a2f39042eb8c24b45aa45c9435910b0b, type: 3}
+  - {fileID: 8300000, guid: f5b797eb0ce7a894893c2ad8b1ff928f, type: 3}
+  prefabs:
+  - {fileID: 7464134426239613253, guid: 516dadf3f0d69e443979e32858d9b12c, type: 3}
+  - {fileID: 7464134426239613253, guid: 511f2f69a25a8d14eb176a6e1b4b6735, type: 3}
+  - {fileID: 6126127048434066399, guid: d2d132e5a70fc144c945d0a067e7c49d, type: 3}
+  - {fileID: 7464134426239613253, guid: 8dd791a48f492a44abcb5a2bc3e62b58, type: 3}
   _ENEMY: 0
   bonusUI: {fileID: 0}
   energy: 0
@@ -418,6 +429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7394288456607777084}
+  - component: {fileID: 2460593953297171725}
   m_Layer: 0
   m_Name: Energy
   m_TagString: Untagged
@@ -441,6 +453,20 @@ Transform:
   m_Father: {fileID: 1274201279097430957}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2460593953297171725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2358690521843689584}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e457e0666893842b03a28a89ef70a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
+  amount: 0.1
 --- !u!1 &2462622402253577991
 GameObject:
   m_ObjectHideFlags: 0

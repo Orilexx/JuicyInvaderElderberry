@@ -6,13 +6,14 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float moveSpeed;
+    [SerializeField] float energyProjSpeed;
 
     [SerializeField] GameObject particles;
     [SerializeField] GameObject deathParticles;
 
     private GameManager gameManager;
 
-    /*[HideInInspector]*/ public EnemyController instantiater;
+    [HideInInspector] public EnemyController instantiater;
 
     private CameraController cameraController;
 
@@ -23,6 +24,8 @@ public class Projectile : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         cameraController = gameManager.GameCamera;
 
+        if (gameManager.player.projectileType == TYPE_PROJECTILE.ENERGY && !instantiater)
+            moveSpeed = energyProjSpeed;
     }
 
     // Update is called once per frame
@@ -38,15 +41,15 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Destroyer")
-        {
-            Destroy(gameObject);
+        //if (collision.gameObject.tag == "Destroyer")
+        //{
+        //    Destroy(gameObject);
 
-            if (!instantiater)
-                gameManager.player.projectileType = TYPE_PROJECTILE.BASIC;
+        //    if (!instantiater)
+        //        gameManager.player.projectileType = TYPE_PROJECTILE.BASIC;
 
-        }
-        else if (collision.gameObject.tag == "Enemy")
+        //}
+        /*else */if (collision.gameObject.tag == "Enemy")
         {
             if (gameObject.tag != "EnemyProj")
             {
@@ -101,7 +104,7 @@ public class Projectile : MonoBehaviour
 
                 // DESTRUCTION
                 
-                if (gameManager.player.projectileType != TYPE_PROJECTILE.PIERCE)
+                if (gameManager.player.projectileType == TYPE_PROJECTILE.BASIC || gameManager.player.projectileType == TYPE_PROJECTILE.MULTIPLE)
                     Destroy(gameObject);
 
 
@@ -132,6 +135,18 @@ public class Projectile : MonoBehaviour
                     player.PlaySound(player.GetComponent<AudioSource>(), player.audioClips[0]);
             }
             
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Destroyer")
+        {
+            Destroy(gameObject);
+
+            if (!instantiater)
+                gameManager.player.projectileType = TYPE_PROJECTILE.BASIC;
+
         }
     }
 
