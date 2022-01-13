@@ -41,6 +41,10 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.tag == "Destroyer")
         {
             Destroy(gameObject);
+
+            if (!instantiater)
+                gameManager.player.projectileType = TYPE_PROJECTILE.BASIC;
+
         }
         else if (collision.gameObject.tag == "Enemy")
         {
@@ -97,7 +101,9 @@ public class Projectile : MonoBehaviour
 
                 // DESTRUCTION
                 
-                Destroy(gameObject);
+                if (gameManager.player.projectileType != TYPE_PROJECTILE.PIERCE)
+                    Destroy(gameObject);
+
 
             }
         }

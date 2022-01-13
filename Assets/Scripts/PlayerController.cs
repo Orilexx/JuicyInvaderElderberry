@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+public enum TYPE_PROJECTILE
+{
+    BASIC,
+    PIERCE,
+    ENERGY,
+    MULTIPLE
+}
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,12 +17,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform weapon;
     [SerializeField] Rigidbody2D prefab;
 
+    public TYPE_PROJECTILE projectileType;
+
     [SerializeField] float shootCooldown;
     private float actualCooldown;
 
     [SerializeField] ParticleSystem particlesShoot;
 
     Vector2 movement;
+    GameManager gameManager;
 
     public int score;
     public Text scoreText;
@@ -83,6 +93,8 @@ public class PlayerController : MonoBehaviour
         energyBar.sprite = energyLiquids[energy];
 
         bonusUI.gameObject.SetActive(false);
+
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -153,6 +165,20 @@ public class PlayerController : MonoBehaviour
         energyBar.sprite = energyLiquids[energy];
         bonusUI.gameObject.SetActive(false);
         energyContainer.sprite = notFullEnergy;
+
+        if (bonusUI.sprite == gameManager.bonusSprite[4] || bonusUI.sprite == gameManager.bonusSprite[7])
+        {
+            projectileType = TYPE_PROJECTILE.PIERCE;
+        }
+        else if (bonusUI.sprite == gameManager.bonusSprite[5] || bonusUI.sprite == gameManager.bonusSprite[8])
+        {
+            projectileType = TYPE_PROJECTILE.MULTIPLE;
+        }
+        else if (bonusUI.sprite == gameManager.bonusSprite[6] || bonusUI.sprite == gameManager.bonusSprite[9])
+        {
+            projectileType = TYPE_PROJECTILE.ENERGY;
+        }
+
 
     }
 }
