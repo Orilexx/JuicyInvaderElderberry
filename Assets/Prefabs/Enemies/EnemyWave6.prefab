@@ -966,7 +966,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 5
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
   shieldIsOn: 0
@@ -2058,7 +2058,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 1
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
   shieldIsOn: 0
@@ -3498,7 +3498,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 1
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
   shieldIsOn: 0
@@ -3726,7 +3726,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 1
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
   shieldIsOn: 0
@@ -4470,7 +4470,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 1
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
   shieldIsOn: 0
@@ -5214,7 +5214,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 5
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
   shieldIsOn: 0
@@ -5442,7 +5442,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 5
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
   shieldIsOn: 0
@@ -6354,7 +6354,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 1
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
   shieldIsOn: 0
@@ -6740,7 +6740,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 5
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
   shieldIsOn: 0
@@ -7772,7 +7772,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 1
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
   shieldIsOn: 0
