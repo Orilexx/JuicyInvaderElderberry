@@ -78,6 +78,7 @@ public class Projectile : MonoBehaviour
                 }
                 else
                 {
+
                     StartCoroutine(EnemyDestruct(collision, enemy));
 
                     // ENERGY
@@ -120,12 +121,15 @@ public class Projectile : MonoBehaviour
                     // SCORE
                     gameManager.player.score += collision.gameObject.GetComponent<EnemyController>().score;
                     gameManager.player.scoreText.text = "Score : " + gameManager.player.score;
-                } 
+                }
 
                 // DESTRUCTION
-                
+
                 if (projectileType == TYPE_PROJECTILE.BASIC || projectileType == TYPE_PROJECTILE.MULTIPLE)
-                    Destroy(gameObject);
+                {
+                    gameObject.GetComponent<SpriteRenderer>().sprite = null;
+                    gameObject.GetComponent<Collider2D>().enabled = false;
+                }
 
 
             }
@@ -171,8 +175,6 @@ public class Projectile : MonoBehaviour
     {
         enemy.PlaySound(collision.gameObject.GetComponent<AudioSource>(), enemy.deathClip);
 
-        Debug.Log(enemy);
-
         enemy.gameObject.GetComponent<SpriteRenderer>().sprite = null;
         enemy.gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
@@ -184,5 +186,8 @@ public class Projectile : MonoBehaviour
         yield return new WaitForSeconds(enemy.deathClip.length);
 
         Destroy(collision.gameObject);
+
+        if (projectileType == TYPE_PROJECTILE.BASIC || projectileType == TYPE_PROJECTILE.MULTIPLE)
+            Destroy(gameObject);
     }
 }
