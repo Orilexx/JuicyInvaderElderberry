@@ -7895,7 +7895,7 @@ Transform:
   m_GameObject: {fileID: 9181765503456936211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 7200804086609099591}
   m_Father: {fileID: 0}
@@ -7916,8 +7916,7 @@ MonoBehaviour:
   armies:
   - {fileID: 7200804086609099590}
   prefab: {fileID: 1866359108432930292, guid: b1a31ba29a3184044bc1bcac5bca871f, type: 3}
-  boomerShootPrefab: {fileID: 6109945854536059790, guid: a5dbd8f126a85434b8365e70a1dfbc45, type: 3}
-  timer: 3
+  timer: 1.5
   frontEnemies: []
   deathClip: {fileID: 8300000, guid: 7286c12fffbacf64384f7ae4b3f0fd7e, type: 3}
   santenShieldClip: {fileID: 8300000, guid: bfa2a686f2fda6c49a6aef94efdadcb9, type: 3}
@@ -7934,7 +7933,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2302524915980738026, guid: 626ac4c34adf97b4c8d95a8dafff010b, type: 2}
   m_audioClip: {fileID: 8300000, guid: 33f305492a11619488b17089ddc0c91f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
