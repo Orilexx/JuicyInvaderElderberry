@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class JuicyManager : MonoBehaviour
 {
@@ -22,13 +24,15 @@ public class JuicyManager : MonoBehaviour
     public CameraController jmCamera;
 
     [Header("Input 5")]
+    public Volume volume;
+    private ColorAdjustments saturation;
     public bool timeFreeze;
 
     [Header("Input 6")]
     public bool fxEnemyShot;
 
     [Header("Input 7")]
-    public GameObject globalVolume;
+    private Vignette vignette;
     public List<GameObject> lights2D;
     private bool postProcess;
 
@@ -45,6 +49,9 @@ public class JuicyManager : MonoBehaviour
     {
         if (instance == null)
             instance = this;
+
+        volume.profile.TryGet<Vignette>(out vignette);
+        volume.profile.TryGet<ColorAdjustments>(out saturation);
     }
 
     // Update is called once per frame
@@ -81,6 +88,8 @@ public class JuicyManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             timeFreeze = !timeFreeze;
+
+            saturation.active = timeFreeze;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha6))
@@ -92,9 +101,9 @@ public class JuicyManager : MonoBehaviour
         {
             postProcess = !postProcess;
 
-            globalVolume.SetActive(postProcess);
+            vignette.active = postProcess;
 
-            for(int i = 0; i < lights2D.Count; i++)
+            for (int i = 0; i < lights2D.Count; i++)
             {
                 lights2D[i].SetActive(postProcess);
             }
