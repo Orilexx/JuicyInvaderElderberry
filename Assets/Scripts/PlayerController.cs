@@ -20,17 +20,26 @@ public class PlayerController : MonoBehaviour
     public int score;
     public Text scoreText;
 
+    [Header("Life")]
     public int life = 50;
     [HideInInspector] public int actualLife;
     public Image lifeImage;
 
+
+    [Header("Shield")]
     public Sprite playerSprite;
     public Sprite shieldSprite;
     public bool shieldIsOn;
+    [Space(10)]
+
+    public Image lifeContainer;
+    public Sprite protectedLife;
+    public Sprite notProtectedLife;
+    [Space(10)]
 
     public List<AudioClip> audioClips;
 
-    public TYPE_ENEMY _ENEMY;
+    [HideInInspector] public TYPE_ENEMY _ENEMY;
 
     public Image bonusUI;
 
@@ -116,6 +125,7 @@ public class PlayerController : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = shieldSprite;
         shieldIsOn = true;
         PlaySound(gameObject.GetComponent<AudioSource>(), audioClips[3]);
+        lifeContainer.sprite = protectedLife;
     }
 
     public void DisableShield()
@@ -123,6 +133,7 @@ public class PlayerController : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = playerSprite;
         shieldIsOn = false;
         PlaySound(gameObject.GetComponent<AudioSource>(), audioClips[1]);
+        lifeContainer.sprite = notProtectedLife;
     }
 
     public void PlaySound(AudioSource audioSource)

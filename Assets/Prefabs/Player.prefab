@@ -263,6 +263,9 @@ MonoBehaviour:
   playerSprite: {fileID: 21300000, guid: 6cd112646b6b2cc4284473796392b4f1, type: 3}
   shieldSprite: {fileID: 21300000, guid: 25aaf2004fe4f074d98e799ed8ad66fc, type: 3}
   shieldIsOn: 0
+  lifeContainer: {fileID: 0}
+  protectedLife: {fileID: 21300000, guid: 4d135a63bf69399419302c5515fb5a5d, type: 3}
+  notProtectedLife: {fileID: 21300000, guid: 50aabb6f2b6651f43add4fa5f3be6c65, type: 3}
   audioClips:
   - {fileID: 8300000, guid: a29e91a7bdbd6fa4f802978383b2c1f3, type: 3}
   - {fileID: 8300000, guid: d814b95b76e759a42accf2a04abd0094, type: 3}
@@ -430,7 +433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2358690521843689584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.18, y: 0, z: 0}
+  m_LocalPosition: {x: 4.28, y: 1.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7157734797630667756}
