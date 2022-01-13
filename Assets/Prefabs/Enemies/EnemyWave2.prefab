@@ -946,12 +946,12 @@ MonoBehaviour:
   enemies:
   - {fileID: 6117030329449202465}
   - {fileID: 8040009785523274397}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7567733909333440529}
+  - {fileID: 8795724494059796495}
+  - {fileID: 3487704422288029210}
+  - {fileID: 6038153637080740237}
+  - {fileID: 2142644209341519568}
+  - {fileID: 2062179833316537418}
   padding: 0.1
   gameManager: {fileID: 0}
 --- !u!50 &9146666611940800686
@@ -3891,16 +3891,16 @@ MonoBehaviour:
   enemies:
   - {fileID: 7200804086787278099}
   - {fileID: 7200804086139190514}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5094569642280416029}
+  - {fileID: 1702785468989947046}
+  - {fileID: 96424821745251262}
+  - {fileID: 4616523958784330142}
+  - {fileID: 1685523299612566306}
+  - {fileID: 7378380651956636093}
+  - {fileID: 2561260659560613735}
+  - {fileID: 3560700482372146801}
+  - {fileID: 4037743700704322590}
+  - {fileID: 5802301613809973213}
   padding: 0.1
   gameManager: {fileID: 0}
 --- !u!50 &7200804086609099588

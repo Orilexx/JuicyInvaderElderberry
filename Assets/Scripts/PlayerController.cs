@@ -118,6 +118,8 @@ public class PlayerController : MonoBehaviour
 
                 Instantiate(prefab, weapon.position, prefab.transform.rotation);
                 actualCooldown = 0;
+
+                projectileType = TYPE_PROJECTILE.BASIC;
             }
         }
         actualCooldown += Time.deltaTime;

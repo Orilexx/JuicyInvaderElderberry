@@ -19,12 +19,16 @@ public class Projectile : MonoBehaviour
 
     private Color lerpedColor;
 
+    public TYPE_PROJECTILE projectileType;
+
     private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         cameraController = gameManager.GameCamera;
 
-        if (gameManager.player.projectileType == TYPE_PROJECTILE.ENERGY && !instantiater)
+        projectileType = gameManager.player.projectileType;
+
+        if (projectileType == TYPE_PROJECTILE.ENERGY && !instantiater)
             moveSpeed = energyProjSpeed;
     }
 
@@ -104,7 +108,7 @@ public class Projectile : MonoBehaviour
 
                 // DESTRUCTION
                 
-                if (gameManager.player.projectileType == TYPE_PROJECTILE.BASIC || gameManager.player.projectileType == TYPE_PROJECTILE.MULTIPLE)
+                if (projectileType == TYPE_PROJECTILE.BASIC || projectileType == TYPE_PROJECTILE.MULTIPLE)
                     Destroy(gameObject);
 
 
@@ -144,8 +148,8 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
 
-            if (!instantiater)
-                gameManager.player.projectileType = TYPE_PROJECTILE.BASIC;
+            //if (!instantiater)
+            //    gameManager.player.projectileType = TYPE_PROJECTILE.BASIC;
 
         }
     }

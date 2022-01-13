@@ -40,6 +40,11 @@ public class Wave : MonoBehaviour
 
         timeLeft -= Time.deltaTime * gameManager.timeScale;
 
+        //if (gameObject != gameManager.crabyWave)
+        //{
+
+        //}
+        
         if (timeLeft <= 0)
         {
             timeLeft = timer;
@@ -56,8 +61,6 @@ public class Wave : MonoBehaviour
         if (crabyTimeLeft <= 0 && gameManager.crabyWave == null && !crabyInstance)
         {
             // CRABY INSTANTIATION
-            Debug.Log("TimeLeft : " + crabyTimeLeft);
-            //Debug.Log("SpawnTime : " + crabySpawnTime);
 
             int k = Random.Range(0, 2);
             float positionY = Random.Range(-1.5f, 3f);
@@ -123,48 +126,48 @@ public class Wave : MonoBehaviour
     private void InstanceProj()
     {
 
-        int i = Random.Range(0, frontEnemies.Count);
-
-        if (frontEnemies[i].damage != 0)
+        if (frontEnemies.Count > 0)
         {
-            Rigidbody2D projectile;
+            int i = Random.Range(0, frontEnemies.Count);
 
-            //if (frontEnemies[i].type == TYPE_ENEMY.NARUTO)
-            //{
-            //    Vector3 direction = (prefab.transform.position - gameManager.player.transform.position);
-            //    //direction.x = 0;
-            //    //direction.y = 0;
-
-            //    projectile = Instantiate(prefab, frontEnemies[i].spawnWeapon.position, Quaternion.LookRotation(direction));
-            //    gameObject.GetComponent<AudioSource>().Play();
-            //    projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
-            //}
-            /*else */
-            if (frontEnemies[i].type == TYPE_ENEMY.MAI || frontEnemies[i].type == TYPE_ENEMY.SANTEN || frontEnemies[i].type == TYPE_ENEMY.ECHO || frontEnemies[i].type == TYPE_ENEMY.NARUTO)
+            if (frontEnemies[i].damage != 0)
             {
-                projectile = Instantiate(prefab, frontEnemies[i].spawnWeapon.position, prefab.transform.rotation);
-                gameObject.GetComponent<AudioSource>().Play();
-                projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
-                
+
+                Rigidbody2D projectile;
+
+                if (frontEnemies[i].type == TYPE_ENEMY.MAI || frontEnemies[i].type == TYPE_ENEMY.SANTEN || frontEnemies[i].type == TYPE_ENEMY.ECHO || frontEnemies[i].type == TYPE_ENEMY.NARUTO)
+                {
+                    projectile = Instantiate(prefab, frontEnemies[i].spawnWeapon.position, prefab.transform.rotation);
+                    gameObject.GetComponent<AudioSource>().Play();
+                    projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
+
+                }
+                else if (frontEnemies[i].type == TYPE_ENEMY.BOOMER)
+                {
+                    Instantiate(boomerShootPrefab, frontEnemies[i].spawnWeapon.position, boomerShootPrefab.transform.rotation);
+
+                    projectile = boomerShootPrefab.transform.Find("ProjectileEnemy").GetComponent<Rigidbody2D>();
+                    projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
+
+                    Rigidbody2D projectile2 = boomerShootPrefab.transform.Find("ProjectileEnemy2").GetComponent<Rigidbody2D>();
+                    projectile2.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
+
+                    gameObject.GetComponent<AudioSource>().Play();
+                }
+                //else if (frontEnemies[i].type == TYPE_ENEMY.NARUTO)
+                //{
+                //    Vector3 direction = (prefab.transform.position - gameManager.player.transform.position);
+                //    //direction.x = 0;
+                //    //direction.y = 0;
+
+                //    projectile = Instantiate(prefab, frontEnemies[i].spawnWeapon.position, Quaternion.LookRotation(direction));
+                //    gameObject.GetComponent<AudioSource>().Play();
+                //    projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
+                //}
+
             }
-            else if (frontEnemies[i].type == TYPE_ENEMY.BOOMER)
-            {
-                Instantiate(boomerShootPrefab, frontEnemies[i].spawnWeapon.position, boomerShootPrefab.transform.rotation);
-
-                projectile = boomerShootPrefab.transform.Find("ProjectileEnemy").GetComponent<Rigidbody2D>();
-                projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
-
-                Rigidbody2D projectile2 = boomerShootPrefab.transform.Find("ProjectileEnemy2").GetComponent<Rigidbody2D>();
-                projectile2.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
-
-                gameObject.GetComponent<AudioSource>().Play();
-            }
-            //else
-            //{
-            //    InstanceProj();
-            //}
-
         }
+        
 
     }
 }

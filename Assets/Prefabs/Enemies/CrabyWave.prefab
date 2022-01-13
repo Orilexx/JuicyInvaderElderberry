@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 6138924960159327511}
   - component: {fileID: 6312648879234375052}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyCraby
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
