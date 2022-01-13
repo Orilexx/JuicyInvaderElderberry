@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
     [Space(10)]
 
     public List<Sprite> energyLiquids;
-    Color lerpedColor = Color.green;
+    [HideInInspector] public Color lerpedColor = Color.green;
 
 
     private void Start()
@@ -112,7 +112,8 @@ public class PlayerController : MonoBehaviour
         {
             if (actualCooldown >= shootCooldown)
             {
-                particlesShoot.Play();
+                if (JuicyManager.instance.fxPlayerShot)
+                    particlesShoot.Play();
 
                 PlaySound(weapon.gameObject.GetComponent<AudioSource>(), shootClips[((int)projectileType)]);
                 prefab = prefabs[((int)projectileType)];
@@ -145,17 +146,17 @@ public class PlayerController : MonoBehaviour
     public void EnableShield()
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = shieldSprite;
+        lifeContainer.sprite = protectedLife;
         shieldIsOn = true;
         PlaySound(gameObject.GetComponent<AudioSource>(), audioClips[3]);
-        lifeContainer.sprite = protectedLife;
     }
 
     public void DisableShield()
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = playerSprite;
+        lifeContainer.sprite = notProtectedLife;
         shieldIsOn = false;
         PlaySound(gameObject.GetComponent<AudioSource>(), audioClips[1]);
-        lifeContainer.sprite = notProtectedLife;
     }
 
     public void PlaySound(AudioSource audioSource)

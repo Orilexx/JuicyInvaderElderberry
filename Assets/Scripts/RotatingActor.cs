@@ -15,6 +15,7 @@ public class RotatingActor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, 0, 360.0f) * 2 * Time.deltaTime * gameManager.timeScale);
+        if (JuicyManager.instance.fxEnemyShot)
+            transform.Rotate(new Vector3(0, 0, 360.0f) * 2 * Time.deltaTime * gameManager.timeScale);
     }
 }

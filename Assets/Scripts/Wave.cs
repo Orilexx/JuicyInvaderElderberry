@@ -142,7 +142,8 @@ public class Wave : MonoBehaviour
                     gameObject.GetComponent<AudioSource>().Play();
                     projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
 
-                    Instantiate(particles, projectile.transform.position, particles.transform.rotation);
+                    if (JuicyManager.instance.fxEnemyShot)
+                        Instantiate(particles, projectile.transform.position, particles.transform.rotation);
                 }
                 else if (frontEnemies[i].type == TYPE_ENEMY.BOOMER)
                 {
@@ -154,7 +155,8 @@ public class Wave : MonoBehaviour
                     Rigidbody2D projectile2 = boomerShootPrefab.transform.Find("ProjectileEnemy2").GetComponent<Rigidbody2D>();
                     projectile2.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
 
-                    Instantiate(particles, projectile.transform.position, particles.transform.rotation);
+                    if (JuicyManager.instance.fxEnemyShot)
+                        Instantiate(particles, projectile.transform.position, particles.transform.rotation);
 
                     gameObject.GetComponent<AudioSource>().Play();
                 }

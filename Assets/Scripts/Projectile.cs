@@ -43,6 +43,9 @@ public class Projectile : MonoBehaviour
             rb.MovePosition(rb.position + Vector2.up * moveSpeed * Time.deltaTime * gameManager.timeScale);
         else
             rb.MovePosition(rb.position + Vector2.up * moveSpeed * Time.deltaTime);
+
+        if(gameObject.GetComponent<TrailRenderer>())
+            gameObject.GetComponent<TrailRenderer>().enabled = JuicyManager.instance.fxPlayerShot;
     }
 
   
@@ -55,8 +58,8 @@ public class Projectile : MonoBehaviour
             if (gameObject.tag != "EnemyProj")
             {
                 // INSTANTIATION
-                Instantiate(particles, transform.position, transform.rotation);
-                Instantiate(deathParticles, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+                if (JuicyManager.instance.fxPlayerShot)
+                    Instantiate(particles, transform.position, transform.rotation);
 
                 // FX
                 EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
@@ -70,6 +73,8 @@ public class Projectile : MonoBehaviour
                 }
                 else
                 {
+                    if (JuicyManager.instance.fxEnemyDeath)
+                        Instantiate(deathParticles, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
 
                     StartCoroutine(EnemyDestruct(collision, enemy));
 
