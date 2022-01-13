@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1072450996866978099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8251726158676623917}
   m_Father: {fileID: 0}
@@ -342,7 +342,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &2693207459796934000
@@ -569,7 +569,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &4837241188502676142
@@ -796,7 +796,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &5506280244941435669
@@ -1023,7 +1023,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &2627865597650942946
@@ -1250,7 +1250,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &3657216551654344432
@@ -1507,7 +1507,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &4800806115002412937
@@ -1734,7 +1734,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &7904740968793152378
@@ -1961,7 +1961,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &8337003769666740049
@@ -2188,7 +2188,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &8189554229874188781
@@ -2475,7 +2475,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &3152252443292989
@@ -2732,7 +2732,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &5134984984605867459
@@ -2959,7 +2959,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &1437382088386928434
@@ -3216,7 +3216,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &2170432522374247738
@@ -3473,7 +3473,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &9122463401668548942
@@ -3700,7 +3700,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &2805928679403727551
@@ -3927,7 +3927,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &2459530880320125308
@@ -4244,7 +4244,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &5181536748092500284
@@ -4621,7 +4621,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &4697997613722239222
@@ -4878,7 +4878,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &4958403230254481048
@@ -5105,7 +5105,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &9190550707423050066
@@ -5332,7 +5332,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &9146997465772540500
@@ -5619,7 +5619,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &7971403520087801658
@@ -5846,7 +5846,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &1178166417963439611
@@ -6073,7 +6073,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &207193470909560679
@@ -6300,7 +6300,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &2374011604015457116
@@ -6587,7 +6587,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &7962253027613520289
@@ -6814,7 +6814,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &1236355368000532338
@@ -7041,7 +7041,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &3837083092250736770
@@ -7298,7 +7298,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &4914731684471655621
@@ -7525,7 +7525,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &2167080051626005137
@@ -7752,7 +7752,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &7457324870003118888
@@ -8009,7 +8009,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &5728461109307368750
@@ -8236,7 +8236,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &9176179089128947453
@@ -8493,7 +8493,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &1168657335870322024
@@ -8870,7 +8870,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &4944064520773821337
@@ -9097,7 +9097,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &3976402571230403277
@@ -9384,7 +9384,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &936686894495057798
@@ -9641,7 +9641,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &574198509132286448
@@ -9928,7 +9928,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &5497463090657129801
@@ -10215,7 +10215,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &9175286316899492359
@@ -10442,7 +10442,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &6310501104644461790
@@ -10669,7 +10669,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &3333357720523262490
@@ -10896,7 +10896,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &3046041110955709564
@@ -11123,7 +11123,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &5997209590169956749
@@ -11380,7 +11380,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &8639511222848381939
@@ -11637,7 +11637,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &210837127788703835
@@ -11864,7 +11864,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &4860139038654038892
@@ -12151,7 +12151,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &5382966014815448748
@@ -12438,7 +12438,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &290396522072161286
@@ -12755,7 +12755,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &8025341363606876260
@@ -12982,7 +12982,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &5181579472098859788
@@ -13299,7 +13299,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &3476347745718011320
@@ -13676,7 +13676,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &3665443750317554093
@@ -13933,7 +13933,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &8640298171068277757
@@ -14310,7 +14310,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &8898948293044505559
@@ -14537,7 +14537,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &8118107046978749673
@@ -14764,7 +14764,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &4659342281493397067
@@ -14991,7 +14991,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &2374691725746493333
@@ -15440,7 +15440,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &1756778195540151383
@@ -15667,7 +15667,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &3343775779912300688
@@ -15894,7 +15894,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &6022942380705118328
@@ -16121,7 +16121,7 @@ MonoBehaviour:
   isInFront: 0
   score: 0
   damage: 0
-  type: 0
+  type: 4
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
 --- !u!61 &3476543353725660705
