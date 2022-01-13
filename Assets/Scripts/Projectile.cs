@@ -49,15 +49,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.gameObject.tag == "Destroyer")
-        //{
-        //    Destroy(gameObject);
 
-        //    if (!instantiater)
-        //        gameManager.player.projectileType = TYPE_PROJECTILE.BASIC;
-
-        //}
-        /*else */
         if (collision.gameObject.tag == "Enemy")
         {
             if (gameObject.tag != "EnemyProj")
@@ -129,6 +121,7 @@ public class Projectile : MonoBehaviour
                 {
                     gameObject.GetComponent<SpriteRenderer>().sprite = null;
                     gameObject.GetComponent<Collider2D>().enabled = false;
+                    gameObject.GetComponent<TrailRenderer>().enabled = false;
                 }
 
 
@@ -183,6 +176,7 @@ public class Projectile : MonoBehaviour
             Instantiate(gameManager.immediateBonus, enemy.transform.position, gameManager.immediateBonus.transform.rotation);
         }
 
+        //Debug.LogError("Error");
         yield return new WaitForSeconds(enemy.deathClip.length);
 
         Destroy(collision.gameObject);
