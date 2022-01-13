@@ -141,6 +141,7 @@ public class PlayerController : MonoBehaviour
         energy = 0;
         energyBar.sprite = energyLiquids[energy];
         bonusUI.gameObject.SetActive(false);
+        energyContainer.sprite = notFullEnergy;
 
     }
 }

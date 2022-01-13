@@ -92,16 +92,22 @@ public class EnemyController : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(spawnWeapon.transform.position, -Vector2.up * 2);
 
-        if (type != TYPE_ENEMY.CRABY)
-        {
-            if (hit.collider.gameObject.CompareTag("Enemy"))
-                return false;
-            else
-                return true;
-        }
+        //if (type != TYPE_ENEMY.CRABY)
+        //{
+        //    if (hit.collider.gameObject.CompareTag("Enemy"))
+        //        return false;
+        //    else
+        //        return true;
+        //}
+        //else
+        //    return true;
+
+        if (hit.collider.gameObject.CompareTag("Enemy"))
+            return false;
         else
             return true;
-        
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -143,7 +149,8 @@ public class EnemyController : MonoBehaviour
     {
         if (other.gameObject.tag == "CrabyDestroyer")
         {
-            Destroy(gameObject);
+            Destroy(gameObject.transform.parent.transform.parent.gameObject);
+
         }
     }
 

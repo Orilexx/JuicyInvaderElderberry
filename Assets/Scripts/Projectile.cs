@@ -59,7 +59,9 @@ public class Projectile : MonoBehaviour
                 {
                     if(gameManager.player.energy != 4)
                     {
-                        gameManager.player._ENEMY = enemy.type;
+                        if (enemy.type != TYPE_ENEMY.CRABY)
+                            gameManager.player._ENEMY = enemy.type;
+
                         gameManager.player.energy = 0;
                         gameManager.player.energy++;
                         gameManager.player.energyBar.sprite = gameManager.player.energyLiquids[gameManager.player.energy];

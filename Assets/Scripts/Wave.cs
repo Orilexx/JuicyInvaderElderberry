@@ -8,6 +8,7 @@ public class Wave : MonoBehaviour
     public List<ArmyManager> armies;
 
     [SerializeField] Rigidbody2D prefab;
+    [SerializeField] GameObject boomerShootPrefab;
 
     [SerializeField] float timer = 3f;
     private float timeLeft;
@@ -111,7 +112,7 @@ public class Wave : MonoBehaviour
         {
             for(int j = 0; j < armies[i].GetEnemies().Count; j++)
             {
-                if (armies[i].GetEnemies()[j].IsInFront())
+                if (armies[i].GetEnemies()[j].IsInFront() && armies[i].GetEnemies()[j].type != TYPE_ENEMY.MOUCHE)
                 {
                     frontEnemies.Add(armies[i].GetEnemies()[j]);
                 }
@@ -128,7 +129,7 @@ public class Wave : MonoBehaviour
         {
             Rigidbody2D projectile;
 
-            //if (frontEnemies[i].type == TYPE_ENEMY.SANTEN)
+            //if (frontEnemies[i].type == TYPE_ENEMY.NARUTO)
             //{
             //    Vector3 direction = (prefab.transform.position - gameManager.player.transform.position);
             //    //direction.x = 0;
@@ -139,17 +140,29 @@ public class Wave : MonoBehaviour
             //    projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
             //}
             /*else */
-            if (frontEnemies[i].type == TYPE_ENEMY.MAI || frontEnemies[i].type == TYPE_ENEMY.SANTEN)
+            if (frontEnemies[i].type == TYPE_ENEMY.MAI || frontEnemies[i].type == TYPE_ENEMY.SANTEN || frontEnemies[i].type == TYPE_ENEMY.ECHO || frontEnemies[i].type == TYPE_ENEMY.NARUTO)
             {
                 projectile = Instantiate(prefab, frontEnemies[i].spawnWeapon.position, prefab.transform.rotation);
                 gameObject.GetComponent<AudioSource>().Play();
                 projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
                 
             }
-            else
+            else if (frontEnemies[i].type == TYPE_ENEMY.BOOMER)
             {
-                InstanceProj();
+                Instantiate(boomerShootPrefab, frontEnemies[i].spawnWeapon.position, boomerShootPrefab.transform.rotation);
+
+                projectile = boomerShootPrefab.transform.Find("ProjectileEnemy").GetComponent<Rigidbody2D>();
+                projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
+
+                Rigidbody2D projectile2 = boomerShootPrefab.transform.Find("ProjectileEnemy2").GetComponent<Rigidbody2D>();
+                projectile2.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
+
+                gameObject.GetComponent<AudioSource>().Play();
             }
+            //else
+            //{
+            //    InstanceProj();
+            //}
 
         }
 

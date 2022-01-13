@@ -78,6 +78,7 @@ MonoBehaviour:
   armies:
   - {fileID: 5186243275248944293}
   prefab: {fileID: 1866359108432930292, guid: b1a31ba29a3184044bc1bcac5bca871f, type: 3}
+  boomerShootPrefab: {fileID: 6109945854536059790, guid: a5dbd8f126a85434b8365e70a1dfbc45, type: 3}
   timer: 3
   frontEnemies: []
   deathClip: {fileID: 8300000, guid: 7286c12fffbacf64384f7ae4b3f0fd7e, type: 3}
