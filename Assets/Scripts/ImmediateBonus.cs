@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public enum NAME_BONUS
 {
@@ -25,6 +27,9 @@ public class ImmediateBonus : MonoBehaviour
 
     public float speed = -50;
 
+    public Volume volume;
+
+    private ColorAdjustments colorAdj;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +38,7 @@ public class ImmediateBonus : MonoBehaviour
 
         bonusName = (NAME_BONUS)Random.Range(0, 4);
 
+        volume = GameObject.FindGameObjectWithTag("Volume").GetComponent<Volume>();
         gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.bonusSprite[((int)bonusName)];
 
 
@@ -84,8 +90,12 @@ public class ImmediateBonus : MonoBehaviour
         }
         else if (bonusName == NAME_BONUS.TIMESTOP)
         {
+            
             StartCoroutine(TimeStop());
+
+            
         }
+
         else if (bonusName == NAME_BONUS.RESERVE)
         {
             gameManager.player.energy = 4;
@@ -101,7 +111,13 @@ public class ImmediateBonus : MonoBehaviour
 
     IEnumerator TimeStop()
     {
+
+        if (volume.profile.TryGet<ColorAdjustments>(out colorAdj))
+        {
+            colorAdj.saturation.value = -63f;
+        }
         gameManager.timeScale = 0;
+        
         gameObject.GetComponent<SpriteRenderer>().sprite = null;
 
         gameManager.player.PlaySound(gameManager.player.gameObject.GetComponent<AudioSource>(), gameManager.player.audioClips[4]);
@@ -109,6 +125,10 @@ public class ImmediateBonus : MonoBehaviour
         yield return new WaitForSeconds(4f);
 
         gameManager.timeScale = 1;
+        if (volume.profile.TryGet<ColorAdjustments>(out colorAdj))
+        {
+            colorAdj.saturation.value = 0f;
+        }
 
         Destroy(gameObject);
     }
