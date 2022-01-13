@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public Wave crabyWave;
 
     public List<Sprite> enemiesSprite;
+    public Sprite santen;
 
     public List<Sprite> bonusSprite;
 

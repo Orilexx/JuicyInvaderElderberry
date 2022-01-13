@@ -284,7 +284,7 @@ MonoBehaviour:
   - {fileID: 7464134426239613253, guid: 516dadf3f0d69e443979e32858d9b12c, type: 3}
   - {fileID: 7464134426239613253, guid: 511f2f69a25a8d14eb176a6e1b4b6735, type: 3}
   - {fileID: 6126127048434066399, guid: d2d132e5a70fc144c945d0a067e7c49d, type: 3}
-  - {fileID: 7464134426239613253, guid: 8dd791a48f492a44abcb5a2bc3e62b58, type: 3}
+  - {fileID: 5045974668632509595, guid: 84792a84b4b3791458d1d37b110216a8, type: 3}
   _ENEMY: 0
   bonusUI: {fileID: 0}
   energy: 0
