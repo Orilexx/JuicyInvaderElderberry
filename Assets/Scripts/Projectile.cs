@@ -34,6 +34,9 @@ public class Projectile : MonoBehaviour
         if (projectileType == TYPE_PROJECTILE.ENERGY && !instantiater)
             moveSpeed = energyProjSpeed;
 
+        if (gameObject.GetComponent<TrailRenderer>())
+            gameObject.GetComponent<TrailRenderer>().enabled = JuicyManager.instance.fxPlayerShot;
+
     }
 
     // Update is called once per frame
@@ -44,8 +47,6 @@ public class Projectile : MonoBehaviour
         else
             rb.MovePosition(rb.position + Vector2.up * moveSpeed * Time.deltaTime);
 
-        if(gameObject.GetComponent<TrailRenderer>())
-            gameObject.GetComponent<TrailRenderer>().enabled = JuicyManager.instance.fxPlayerShot;
     }
 
   
