@@ -1517,11 +1517,8 @@ MonoBehaviour:
   rb: {fileID: 3557332422936780293}
   moveSpeed: 2
   enemies:
-  - {fileID: 0}
   - {fileID: 7079807587078972533}
-  - {fileID: 0}
   - {fileID: 126703282739187517}
-  - {fileID: 0}
   - {fileID: 3907395784167933178}
   - {fileID: 4881537200039809050}
   - {fileID: 8347806615065053662}
@@ -3538,11 +3535,8 @@ MonoBehaviour:
   rb: {fileID: 7200804086609099588}
   moveSpeed: 2
   enemies:
-  - {fileID: 0}
   - {fileID: 7200804086139190514}
-  - {fileID: 0}
   - {fileID: 7200804085646521595}
-  - {fileID: 0}
   - {fileID: 7200804085918518900}
   - {fileID: 7200804087405453816}
   - {fileID: 7200804086348238127}
