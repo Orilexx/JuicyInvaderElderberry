@@ -186,6 +186,5 @@ public class PlayerController : MonoBehaviour
             projectileType = TYPE_PROJECTILE.ENERGY;
         }
 
-
     }
 }

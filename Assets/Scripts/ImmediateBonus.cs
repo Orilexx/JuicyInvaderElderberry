@@ -88,7 +88,11 @@ public class ImmediateBonus : MonoBehaviour
         }
         else if (bonusName == NAME_BONUS.RESERVE)
         {
-            Debug.Log("RAS");
+            gameManager.player.energy = 4;
+            gameManager.player.energyBar.sprite = gameManager.player.energyLiquids[gameManager.player.energy];
+
+            gameManager.player.bonusUI.gameObject.SetActive(true);
+            gameManager.player.bonusUI.sprite = gameManager.bonusSprite[Random.Range(4,10)];
 
             Destroy(gameObject);
         }
