@@ -84,6 +84,7 @@ MonoBehaviour:
   deathClip: {fileID: 8300000, guid: 7286c12fffbacf64384f7ae4b3f0fd7e, type: 3}
   santenShieldClip: {fileID: 8300000, guid: bfa2a686f2fda6c49a6aef94efdadcb9, type: 3}
   crabySpawnTime: 5
+  particles: {fileID: 5514386792713521860, guid: 6555c350365d18e41b40cb57bd5d4e4e, type: 3}
 --- !u!82 &2385141046428953090
 AudioSource:
   m_ObjectHideFlags: 0
@@ -385,6 +386,7 @@ MonoBehaviour:
   type: 6
   deathClip: {fileID: 8300000, guid: 7286c12fffbacf64384f7ae4b3f0fd7e, type: 3}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &6138924960159327511
 BoxCollider2D:
   m_ObjectHideFlags: 0

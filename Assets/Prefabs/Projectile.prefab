@@ -85,7 +85,6 @@ GameObject:
   - component: {fileID: 7917981257838604074}
   - component: {fileID: 1866359108432930292}
   - component: {fileID: 6680176820421750357}
-  - component: {fileID: 9126220301908767774}
   - component: {fileID: 8608735511954067734}
   m_Layer: 0
   m_Name: Projectile
@@ -216,23 +215,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0016401708, y: 0.00002682209}
   m_Size: {x: 0.24580604, y: 0.62496924}
   m_Direction: 0
---- !u!114 &9126220301908767774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7464134426239613253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 5d88a7e8b3fb1bd4fac51ff310606d31, type: 2}
 --- !u!96 &8608735511954067734
 TrailRenderer:
   serializedVersion: 2
@@ -241,7 +223,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7464134426239613253}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -253,7 +235,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -291,7 +273,7 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
+        time: 0.29888916
         value: 0
         inSlope: 0
         outSlope: 0
@@ -335,8 +317,8 @@ TrailRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 0
-    shadowBias: 0.5
-    generateLightingData: 0
+    shadowBias: 0
+    generateLightingData: 1
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1

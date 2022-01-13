@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
     public List<Sprite> energyLiquids;
     Color lerpedColor = Color.green;
 
+
     private void Start()
     {
         actualCooldown = shootCooldown;
@@ -117,6 +118,8 @@ public class PlayerController : MonoBehaviour
                 prefab = prefabs[((int)projectileType)];
 
                 Instantiate(prefab, weapon.position, prefab.transform.rotation);
+                
+
                 actualCooldown = 0;
             }
         }

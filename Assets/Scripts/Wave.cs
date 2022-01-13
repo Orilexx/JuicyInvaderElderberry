@@ -24,6 +24,8 @@ public class Wave : MonoBehaviour
     private float crabyTimeLeft;
     private bool crabyInstance;
 
+    [Header("Particules tir ennemi")]
+    [SerializeField] GameObject particles;
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -125,7 +127,6 @@ public class Wave : MonoBehaviour
 
     private void InstanceProj()
     {
-
         if (frontEnemies.Count > 0)
         {
             int i = Random.Range(0, frontEnemies.Count);
@@ -141,6 +142,7 @@ public class Wave : MonoBehaviour
                     gameObject.GetComponent<AudioSource>().Play();
                     projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
 
+                    Instantiate(particles, projectile.transform.position, particles.transform.rotation);
                 }
                 else if (frontEnemies[i].type == TYPE_ENEMY.BOOMER)
                 {
@@ -151,6 +153,8 @@ public class Wave : MonoBehaviour
 
                     Rigidbody2D projectile2 = boomerShootPrefab.transform.Find("ProjectileEnemy2").GetComponent<Rigidbody2D>();
                     projectile2.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
+
+                    Instantiate(particles, projectile.transform.position, particles.transform.rotation);
 
                     gameObject.GetComponent<AudioSource>().Play();
                 }
@@ -164,7 +168,7 @@ public class Wave : MonoBehaviour
                 //    gameObject.GetComponent<AudioSource>().Play();
                 //    projectile.gameObject.GetComponent<Projectile>().instantiater = frontEnemies[i];
                 //}
-
+                
             }
         }
         

@@ -165,6 +165,7 @@ MonoBehaviour:
   type: 2
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &5687353596773291372
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -422,6 +423,7 @@ MonoBehaviour:
   type: 5
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &3684774911635622017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -709,6 +711,7 @@ MonoBehaviour:
   type: 2
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &956926133213722795
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -936,6 +939,7 @@ MonoBehaviour:
   type: 5
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &6851844229563361662
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1193,6 +1197,7 @@ MonoBehaviour:
   type: 2
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &616739084224643035
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1682,6 +1687,7 @@ MonoBehaviour:
   type: 2
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &4749829239767548987
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1909,6 +1915,7 @@ MonoBehaviour:
   type: 2
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &5787048956894615565
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2196,6 +2203,7 @@ MonoBehaviour:
   type: 5
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &5817499748548036498
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2423,6 +2431,7 @@ MonoBehaviour:
   type: 2
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &3051469865126080674
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2650,6 +2659,7 @@ MonoBehaviour:
   type: 5
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &1532122107349698352
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2877,6 +2887,7 @@ MonoBehaviour:
   type: 2
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &5043676443572549181
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3104,6 +3115,7 @@ MonoBehaviour:
   type: 2
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &5274248153409075077
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3331,6 +3343,7 @@ MonoBehaviour:
   type: 2
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &7326460927586811983
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3670,6 +3683,7 @@ MonoBehaviour:
   type: 2
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &2747136251574784549
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3878,6 +3892,7 @@ MonoBehaviour:
   deathClip: {fileID: 8300000, guid: 7286c12fffbacf64384f7ae4b3f0fd7e, type: 3}
   santenShieldClip: {fileID: 8300000, guid: bfa2a686f2fda6c49a6aef94efdadcb9, type: 3}
   crabySpawnTime: 5
+  particles: {fileID: 5514386792713521860, guid: 6555c350365d18e41b40cb57bd5d4e4e, type: 3}
 --- !u!82 &6302198885598922570
 AudioSource:
   m_ObjectHideFlags: 0

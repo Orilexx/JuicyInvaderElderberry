@@ -264,6 +264,7 @@ MonoBehaviour:
   deathClip: {fileID: 8300000, guid: 7286c12fffbacf64384f7ae4b3f0fd7e, type: 3}
   santenShieldClip: {fileID: 8300000, guid: bfa2a686f2fda6c49a6aef94efdadcb9, type: 3}
   crabySpawnTime: 5
+  particles: {fileID: 5514386792713521860, guid: 6555c350365d18e41b40cb57bd5d4e4e, type: 3}
 --- !u!82 &2828770632080712132
 AudioSource:
   m_ObjectHideFlags: 0
@@ -465,6 +466,7 @@ MonoBehaviour:
   type: 0
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &5562650572579898203
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -692,6 +694,7 @@ MonoBehaviour:
   type: 0
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &9012596105895240795
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -919,6 +922,7 @@ MonoBehaviour:
   type: 0
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &5304817862541234281
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1146,6 +1150,7 @@ MonoBehaviour:
   type: 1
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &467119106985604165
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1373,6 +1378,7 @@ MonoBehaviour:
   type: 3
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &8782065110961231122
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1600,6 +1606,7 @@ MonoBehaviour:
   type: 2
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &6197746351055159235
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1945,6 +1952,7 @@ MonoBehaviour:
   type: 0
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &1376297141397538824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2172,6 +2180,7 @@ MonoBehaviour:
   type: 5
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &2974136828316939722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2399,6 +2408,7 @@ MonoBehaviour:
   type: 0
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &6010512731091824337
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2626,6 +2636,7 @@ MonoBehaviour:
   type: 0
   deathClip: {fileID: 0}
   specialEnemyClip: {fileID: 0}
+  shieldIsOn: 0
 --- !u!61 &4179655383828443823
 BoxCollider2D:
   m_ObjectHideFlags: 0
