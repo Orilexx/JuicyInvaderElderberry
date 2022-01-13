@@ -90,6 +90,7 @@ public class ImmediateBonus : MonoBehaviour
         {
             gameManager.player.energy = 4;
             gameManager.player.energyBar.sprite = gameManager.player.energyLiquids[gameManager.player.energy];
+            gameManager.player.energyContainer.sprite = gameManager.player.fullEnergy;
 
             gameManager.player.bonusUI.gameObject.SetActive(true);
             gameManager.player.bonusUI.sprite = gameManager.bonusSprite[Random.Range(4,10)];
