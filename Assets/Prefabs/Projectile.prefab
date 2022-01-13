@@ -176,8 +176,9 @@ MonoBehaviour:
   moveSpeed: 100
   energyProjSpeed: 20
   particles: {fileID: 6038337497785205914, guid: 50a171ca05ed9c748978a24f0f9b0b49, type: 3}
-  deathParticles: {fileID: 7747911442235987759, guid: cff085ac78063844eb9a531bc25712a3, type: 3}
+  deathParticles: {fileID: 2105755908128777031, guid: 0c5ea65747ffc084c9fef0f9e657eeed, type: 3}
   instantiater: {fileID: 0}
+  projectileType: 0
 --- !u!50 &1866359108432930292
 Rigidbody2D:
   serializedVersion: 4
