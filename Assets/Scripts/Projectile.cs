@@ -28,8 +28,12 @@ public class Projectile : MonoBehaviour
 
         projectileType = gameManager.player.projectileType;
 
+        if (!instantiater)
+            gameManager.player.projectileType = TYPE_PROJECTILE.BASIC;
+
         if (projectileType == TYPE_PROJECTILE.ENERGY && !instantiater)
             moveSpeed = energyProjSpeed;
+
     }
 
     // Update is called once per frame
@@ -53,7 +57,8 @@ public class Projectile : MonoBehaviour
         //        gameManager.player.projectileType = TYPE_PROJECTILE.BASIC;
 
         //}
-        /*else */if (collision.gameObject.tag == "Enemy")
+        /*else */
+        if (collision.gameObject.tag == "Enemy")
         {
             if (gameObject.tag != "EnemyProj")
             {
@@ -63,48 +68,59 @@ public class Projectile : MonoBehaviour
 
                 // FX
                 EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
-                StartCoroutine(EnemyDestruct(collision, enemy));
 
-                // ENERGY
-                if (gameManager.player._ENEMY == TYPE_ENEMY.NONE || gameManager.player._ENEMY != enemy.type)
+                // SHIELD
+                if (enemy.shieldIsOn)
                 {
-                    if(gameManager.player.energy != 4)
-                    {
-                        if (enemy.type != TYPE_ENEMY.CRABY)
-                            gameManager.player._ENEMY = enemy.type;
-
-                        gameManager.player.energy = 0;
-                        gameManager.player.energy++;
-                        gameManager.player.energyBar.sprite = gameManager.player.energyLiquids[gameManager.player.energy];
-                    }
-                    
+                    enemy.shieldIsOn = false;
+                    enemy.GetComponent<SpriteRenderer>().sprite = gameManager.santen;
+                    enemy.PlaySound(collision.gameObject.GetComponent<AudioSource>(), enemy.specialEnemyClip);
                 }
-                else if (gameManager.player._ENEMY == enemy.type)
+                else
                 {
-                    if (gameManager.player.energy < 4)
+                    StartCoroutine(EnemyDestruct(collision, enemy));
+
+                    // ENERGY
+                    if (gameManager.player._ENEMY == TYPE_ENEMY.NONE || gameManager.player._ENEMY != enemy.type)
                     {
-                        gameManager.player.energyContainer.sprite = gameManager.player.notFullEnergy;
-                        gameManager.player.energy++;
-                        gameManager.player.energyBar.sprite = gameManager.player.energyLiquids[gameManager.player.energy];
-
-                        if (gameManager.player.energy == 4)
+                        if (gameManager.player.energy != 4)
                         {
-                            gameManager.player.energyContainer.sprite = gameManager.player.fullEnergy;
+                            if (enemy.type != TYPE_ENEMY.CRABY)
+                                gameManager.player._ENEMY = enemy.type;
 
-                            gameManager.player.bonusUI.gameObject.SetActive(true);
-                            gameManager.player.bonusUI.sprite = gameManager.bonusSprite[((int)enemy.type) + 4];
-                            gameManager.player.PlaySound(gameManager.player.gameObject.GetComponent<AudioSource>(), gameManager.player.audioClips[6]);
+                            gameManager.player.energy = 0;
+                            gameManager.player.energy++;
+                            gameManager.player.energyBar.sprite = gameManager.player.energyLiquids[gameManager.player.energy];
                         }
 
                     }
-                }
+                    else if (gameManager.player._ENEMY == enemy.type)
+                    {
+                        if (gameManager.player.energy < 4)
+                        {
+                            gameManager.player.energyContainer.sprite = gameManager.player.notFullEnergy;
+                            gameManager.player.energy++;
+                            gameManager.player.energyBar.sprite = gameManager.player.energyLiquids[gameManager.player.energy];
 
-                // REMOVE FROM LIST
-                collision.gameObject.GetComponentInParent<ArmyManager>().GetEnemies().Remove(collision.gameObject.GetComponent<EnemyController>());
+                            if (gameManager.player.energy == 4)
+                            {
+                                gameManager.player.energyContainer.sprite = gameManager.player.fullEnergy;
 
-                // SCORE
-                gameManager.player.score += collision.gameObject.GetComponent<EnemyController>().score;
-                gameManager.player.scoreText.text = "Score : " + gameManager.player.score;
+                                gameManager.player.bonusUI.gameObject.SetActive(true);
+                                gameManager.player.bonusUI.sprite = gameManager.bonusSprite[((int)enemy.type) + 4];
+                                gameManager.player.PlaySound(gameManager.player.gameObject.GetComponent<AudioSource>(), gameManager.player.audioClips[6]);
+                            }
+
+                        }
+                    }
+
+                    // REMOVE FROM LIST
+                    collision.gameObject.GetComponentInParent<ArmyManager>().GetEnemies().Remove(collision.gameObject.GetComponent<EnemyController>());
+                    
+                    // SCORE
+                    gameManager.player.score += collision.gameObject.GetComponent<EnemyController>().score;
+                    gameManager.player.scoreText.text = "Score : " + gameManager.player.score;
+                } 
 
                 // DESTRUCTION
                 
@@ -148,15 +164,15 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
 
-            //if (!instantiater)
-            //    gameManager.player.projectileType = TYPE_PROJECTILE.BASIC;
-
         }
     }
 
     IEnumerator EnemyDestruct(Collider2D collision, EnemyController enemy)
     {
         enemy.PlaySound(collision.gameObject.GetComponent<AudioSource>(), enemy.deathClip);
+
+        Debug.Log(enemy);
+
         enemy.gameObject.GetComponent<SpriteRenderer>().sprite = null;
         enemy.gameObject.GetComponent<BoxCollider2D>().enabled = false;
 

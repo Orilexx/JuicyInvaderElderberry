@@ -29,6 +29,8 @@ public class EnemyController : MonoBehaviour
     public AudioClip deathClip;
     public AudioClip specialEnemyClip;
 
+    public bool shieldIsOn;
+
     void Start()
     {
         isInFront = false;
@@ -42,6 +44,9 @@ public class EnemyController : MonoBehaviour
             deathClip = gameManager.armiesManager.deathClip;
         else
             deathClip = gameManager.crabyWave.deathClip;
+
+
+        shieldIsOn = false;
 
         if (type == TYPE_ENEMY.MAI)
         {
@@ -61,6 +66,7 @@ public class EnemyController : MonoBehaviour
             damage = 10;
             gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.enemiesSprite[2];
             specialEnemyClip = gameManager.armiesManager.santenShieldClip;
+            shieldIsOn = true;
         }
         else if (type == TYPE_ENEMY.NARUTO)
         {
