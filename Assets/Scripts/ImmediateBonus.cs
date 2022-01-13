@@ -38,6 +38,9 @@ public class ImmediateBonus : MonoBehaviour
 
         bonusName = (NAME_BONUS)Random.Range(0, 4);
 
+        ReloadBonusLife();
+        ReloadBonusShield();
+
         volume = GameObject.FindGameObjectWithTag("Volume").GetComponent<Volume>();
         gameObject.GetComponent<SpriteRenderer>().sprite = gameManager.bonusSprite[((int)bonusName)];
 
@@ -131,5 +134,23 @@ public class ImmediateBonus : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    private void ReloadBonusLife()
+    {
+        if (gameManager.player.actualLife == gameManager.player.life && bonusName == NAME_BONUS.LIFE)
+        {
+            bonusName = (NAME_BONUS)Random.Range(0, 4);
+            ReloadBonusLife();
+        }
+    }
+
+    private void ReloadBonusShield()
+    {
+        if (gameManager.player.shieldIsOn && bonusName == NAME_BONUS.SHIELD)
+        {
+            bonusName = (NAME_BONUS)Random.Range(0, 4);
+            ReloadBonusShield();
+        }
     }
 }
