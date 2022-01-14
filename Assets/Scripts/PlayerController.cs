@@ -145,8 +145,11 @@ public class PlayerController : MonoBehaviour
 
     public void EnableShield()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = shieldSprite;
-        lifeContainer.sprite = protectedLife;
+        if (JuicyManager.instance.fxUI)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = shieldSprite;
+            lifeContainer.sprite = protectedLife;
+        }
         shieldIsOn = true;
         PlaySound(gameObject.GetComponent<AudioSource>(), audioClips[3]);
     }

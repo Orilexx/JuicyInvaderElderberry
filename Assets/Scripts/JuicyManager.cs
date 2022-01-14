@@ -52,6 +52,9 @@ public class JuicyManager : MonoBehaviour
 
         volume.profile.TryGet<Vignette>(out vignette);
         volume.profile.TryGet<ColorAdjustments>(out saturation);
+
+        volumeAudioMixer = false;
+        audioMixer.SetFloat("volume", -80);
     }
 
     // Update is called once per frame
@@ -113,7 +116,7 @@ public class JuicyManager : MonoBehaviour
         {
             volumeAudioMixer = !volumeAudioMixer;
 
-            if (volumeAudioMixer)
+            if (!volumeAudioMixer)
                 audioMixer.SetFloat("volume", -80);
             else
                 audioMixer.SetFloat("volume", 0);
