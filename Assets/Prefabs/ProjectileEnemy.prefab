@@ -100,11 +100,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1866359108432930292}
-  moveSpeed: -50
+  moveSpeed: -30
   energyProjSpeed: -50
   particles: {fileID: 0}
   deathParticles: {fileID: 0}
   instantiater: {fileID: 0}
+  projectileType: 0
 --- !u!50 &1866359108432930292
 Rigidbody2D:
   serializedVersion: 4
